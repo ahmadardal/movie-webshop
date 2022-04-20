@@ -1,29 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import GetMovieData from './components/GetMovieData';
 
 function App() {
 
   const [listOfMovies, setListOfMovies] = useState(null);
 
-  useEffect(() => {
+  // The title of the movie we want to search for in our GetMovieData component. This should be a State later on.
+  const title = 'Spiderman';
 
-    
-    async function getData() {
-
-      console.log("GET DATA RUNNING!!!")
-  
-      const moviesApi = 'http://www.omdbapi.com/?apikey=d18ade2a&s=batman';
-      const respons = await fetch(moviesApi);
-      const data = await respons.json();
-  
-      await setListOfMovies(data);
-  
-      console.log(listOfMovies);
-  
-    }
-    getData()
-  }, [])
+  useEffect(() => {GetMovieData(setListOfMovies, title)}, [])
 
 
 
