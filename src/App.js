@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Nav from "./components/Nav";
-import FullMovie from "./components/Fullmovie";
-import Hero from "./components/Hero";
+import Nav from "./components/nav";
+import BaseMovie from "./components/basecomponents/basemovie";
+import BaseMain from "./components/basecomponents/basemain";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
 
@@ -22,8 +22,8 @@ const App = () => {
       <Nav />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Hero />} />
-          <Route path="/movie/:id" element={<FullMovie />} />
+          <Route exact path="/" element={<BaseMain />} />
+          <Route path="/movie/:id" element={<BaseMovie />} />
         </Routes>
       </Router>
     </main>

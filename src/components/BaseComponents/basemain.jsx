@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./reusableComponents/Container";
+import Container from "../reusableComponents/Container";
 import { Search } from "react-router-dom";
 
 const BaseMain = () => {
