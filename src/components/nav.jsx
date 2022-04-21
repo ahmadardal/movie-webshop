@@ -9,3 +9,5 @@ const Nav = () => {
         </Container>
     </nav>
 }
+
+export default Nav;

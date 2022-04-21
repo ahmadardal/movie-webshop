@@ -3,10 +3,11 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav'
 import FullMovie from './components/Fullmovie';
+import Hero from './components/Hero'
 
 const App = () => {
   return (
-    <>
+    <main>
       <Nav />
       <Router>
         <Routes>
@@ -14,7 +15,7 @@ const App = () => {
           <Route path='/movie/:id' element={<FullMovie />} />
         </Routes>
       </Router>
-    </>
+    </main>
 
 
     // <div className="App">
