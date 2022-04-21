@@ -1,8 +1,8 @@
 import React from "react";
 
 
-const FullMovie = () => {
+const BaseMovie = () => {
    // const { id } =useParams();
 }
 
-export default FullMovie;
+export default BaseMovie;

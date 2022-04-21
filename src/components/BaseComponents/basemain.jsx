@@ -2,7 +2,7 @@ import React from "react";
 import Container from "./reusableComponents/Container";
 import { Search } from "react-router-dom";
 
-const Hero = () => {
+const BaseMain = () => {
 
     return (
         <section className="hero">
@@ -13,4 +13,4 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default BaseMain;
