@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Nav from './components/nav'
-import FullMovie from './components/fullmovie';
+import Nav from './components/Nav'
+import FullMovie from './components/Fullmovie';
 
 const App = () => {
   return (
