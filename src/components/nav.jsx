@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./reusableComponents/Container";
-import Logo from "./Logo";
+import Logo from "./logo";
 
 const Nav = () => {
     <nav>
