@@ -1,13 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Button from "./reusableComponents/Button";
 
 const Search = () => {
 
     return (
-        <form onSubmit={getMovies}>
-            <div className="formContainer">
-
+        <form>
+            <div className="searchFormContainer">
+                <input type="text"
+                required
+                // value={search}
+                // onChange={e => setSearch(e.target.value)}
+                 />
+                <label>Type a movie name :</label>
             </div>
+            <Button btnText={"Search"} />
         </form>
     )
 }

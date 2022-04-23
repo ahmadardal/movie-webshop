@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+.basemain {
+  display: grid;
+  grid-template-rows: 100px 80px 400px 700px;
+  grid-auto-flow: column;
+  font-size: 28px;
+  text-align-last: center;
+  text-justify: initial;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styles */
+
+.header{
+  background-color: aqua;
+  width: 100%;
+  height: 90px;
+  align-items: center;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Search Styles */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100px;
+form {
+  width: 100%;
+  margin: 5px 0 0 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form .searchFormContainer {
+  height: 38px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .searchFormContainer input,
+form .searchFormContainer button {
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+form .searchFormContainer input {
+  border: 1px solid #eee;
+  padding: 0 10px;
+  width: 260px;
+  display: block;
+}
+
+form .searchFormContainer input:valid,
+form .searchFormContainer input:focus {
+  border: 1px solid #353b80;
+}
+
+form .searchFormContainer input:valid + label,
+form .searchFormContainer input:focus + label {
+  color: #353b80;
+  font-size: 16px;
+  font-weight: 600;
+  transform: translateY(-24px);
+}
+
+form .searchFormContainer label {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  font-weight: 300;
+  pointer-events: none;
+  transform: translateY(9px) translateX(10px);
+  transition: all 400ms ease-in-out;
+}
+
+/* Promotional Styles */
+
+.promotional{
+  background-color: blueviolet;
+  height: 400px;
+}
+
+/* Movies Styles */
+
+.movies{
+  background-color: darkcyan;
+  height:700px;
+}
+
+
+/* Button Styles */
+button {
+  border: none;
+  outline: none;
+  width: 90px;
+  padding: 10px 0;
+  color: #fff;
+  background: #353b80;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
