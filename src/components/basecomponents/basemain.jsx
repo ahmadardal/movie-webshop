@@ -5,7 +5,7 @@ import Promotional from "../promotional";
 import Movies from "../movies";
 // import "../assets/happy.png";
 
-const BaseComponent = ({ headerContent, mainContent, footerContent }) => {
+const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   return (
     <div
       style={{
@@ -46,4 +46,4 @@ const BaseComponent = ({ headerContent, mainContent, footerContent }) => {
   );
 };
 
-export default BaseComponent;
+export default BaseMain;
