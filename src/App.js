@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BaseMovie from "./components/basecomponents/basemovie";
-import BaseMain from "./components/basecomponents/basemain";
+import BaseMovie from "./components/BaseComponents/basemovie";
+import BaseMain from "./components/BaseComponents/basemain";
 import Home from "./pages/home";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
