@@ -20,7 +20,6 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<BaseMovie />} />
         </Routes>
       </Router>
     </main>
