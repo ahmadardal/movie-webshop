@@ -3,6 +3,7 @@ import MenuItem from "./menuitem";
 import Search from "../search";
 import Promotional from "../promotional";
 import Movies from "../movies";
+import MovieSlider from "../movieslider";
 // import "../assets/happy.png";
 
 const BaseMain = ({ headerContent, mainContent, footerContent }) => {
@@ -35,7 +36,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
         </div>
 
         <div className="mainContent" style={{ marginTop: 30 }}>
-          <Promotional />
+          <MovieSlider />
           <Movies />
           {mainContent}
         </div>
