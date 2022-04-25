@@ -1,5 +1,5 @@
 import "../../styles/BaseComponent.css";
-import MenuItem from "./MenuItem";
+import MenuItem from "./menuitem";
 import Search from "../search";
 import Promotional from "../promotional";
 import Movies from "../movies";
