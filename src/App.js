@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Nav from "./components/nav";
 import BaseMovie from "./components/BaseComponents/basemovie";
 import BaseMain from "./components/BaseComponents/basemain";
 import { useEffect, useState } from "react";
@@ -19,7 +18,6 @@ const App = () => {
 
   return (
     <main>
-      <Nav />
       <Router>
         <Routes>
           <Route exact path="/" element={<BaseMain />} />
@@ -27,14 +25,6 @@ const App = () => {
         </Routes>
       </Router>
     </main>
-
-    // <div className="App">
-    //   <header className="App-header">
-
-    //     <p>WELCOME to Movie Shop Project</p>
-
-    //   </header>
-    // </div>
   );
 };
 
