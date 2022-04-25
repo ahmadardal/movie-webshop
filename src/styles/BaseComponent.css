@@ -1,0 +1,64 @@
+
+
+
+  #pageTitle {
+    font-size: 30pt;
+    color: orange;
+
+  }
+
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #f8f8f8;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+
+  .headContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent {
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+  }
+
+  .footerContent {
+    flex: 1;
+    /* background-color: blue; */
+  }
+
+  .Sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    -webkit-app-region: drag;
+    align-self: flex-start;
+    width: 130px;
+    height: 100vh;
+    z-index: 2;
+    /* background: transparent; */
+    background: #ffffff;
+    border-right: 0.2px solid #abababba;
+    filter: drop-shadow(1px 1px 0.5px rgba(103, 100, 100, 0.25));
+  }
+
+  @media (max-width: 600px) { 
+
+    .Sidebar {
+      background-color: green;
+      width: 50px;
+    }
+    
+  }
