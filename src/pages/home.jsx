@@ -1,8 +1,8 @@
-import BaseComponent from '../components/basecomponents/BaseComponent';
+import BaseMain from '../components/basecomponents/basemain';
 
 const Home = () => {
   return (
-    <BaseComponent
+    <BaseMain
       headerContent={
         <div>
           <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
