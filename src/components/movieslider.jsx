@@ -1,14 +1,22 @@
-import React from "react";
-import "../../styles/movieslider.css";
+import SimpleImageSlider from "react-simple-image-slider";
 
-const MovieSlider = () => {
+const images = [
+    { url: require("../assets/img1.jpg")},
+    { url: require("../assets/img2.jpg")},
+];
 
-
+const movieSlider = () => {
     return (
-        <div className="movieslider" >
-            <p>Alla filmer visas här!</p>
+        <div>
+            <SimpleImageSlider
+                width={896}
+                height={504}
+                images={images}
+                showBullets={true}
+                showNavs={true}
+            />
         </div>
-    )
+    );
 }
 
-export default MovieSlider
+export default movieSlider
