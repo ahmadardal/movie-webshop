@@ -1,4 +1,5 @@
 import React from "react";
+import StarRating from "./reusableComponents/starrating";
 
 const Movies = () => {
 
