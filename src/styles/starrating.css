@@ -1,14 +1,10 @@
 .star-rating {
   display: flex;
   width: 250px;
+  align-items: center;
 }
-.star-rating button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.star-rating div {
     width: 40px;
-    
   }
   .on {
     color: rgb(255, 209, 7);
@@ -18,9 +14,7 @@
   }
 
   .star {
-    
-    font-size: 2.5em;
-    
+    font-size: 2.5em; 
   }
 
   .star-rating p {

@@ -3,7 +3,6 @@ import "../../styles/starrating.css";
 
 const StarRating = ({movieRating}) => {
 
-    // This is temporary, this will be a int and set int function we take in from the moviecard component
     const rating = movieRating;
 
     // Rounding up rating for stars
@@ -16,13 +15,12 @@ const StarRating = ({movieRating}) => {
         {[...Array(5)].map((star, index) => {
           index += 1;
           return (
-            <button
-              type="button"
+            <div             
               key={index}
               className={index <= (starRating) ? "on" : "off"}
             >
               <span className="star">&#9733;</span>
-            </button>
+            </div>
           );
         })}
       </div>
@@ -30,9 +28,3 @@ const StarRating = ({movieRating}) => {
   };
 
 export default StarRating;
-
-/* 
-
-Find a way to show half a star                                      []
-
-*/
