@@ -3,6 +3,7 @@ import MenuItem from "./menuitem";
 import Search from "../search";
 import Promotional from "../promotional";
 import Movies from "../movies";
+import MovieCard from "../MovieCard";
 // import "../assets/happy.png";
 
 const BaseMain = ({ headerContent, mainContent, footerContent }) => {
@@ -32,9 +33,11 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
         <div className="headContent">
           {headerContent}
           <Search />
+          <MovieCard />
         </div>
 
         <div className="mainContent" style={{ marginTop: 30 }}>
+
           <Promotional />
           <Movies />
           {mainContent}
