@@ -83,6 +83,14 @@ form .searchFormContainer label {
   height:700px;
 }
 
+.Feedback{
+  background-color: rgb(173, 171, 171);
+  height: 200px;
+  width: 500px;
+  border: 2px solid #6e6c6b;
+  border-radius: 6px;
+}
+
 
 /* Button Styles */
 button {
