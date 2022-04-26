@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "../../styles/starrating.css";
 
-const StarRating = (currentRating) => {
+const StarRating = ({movieRating}) => {
 
     // This is temporary, this will be a int and set int function we take in from the moviecard component
-    const [rating, setRating] = useState(2);
+    const rating = movieRating;
 
-    const [hover, setHover] = useState(0);
+    // Rounding up rating for stars
+    const starRating = parseInt(Math.round(rating));
+
 
     return (
       <div className="star-rating">
@@ -17,10 +19,7 @@ const StarRating = (currentRating) => {
             <button
               type="button"
               key={index}
-              className={index <= (hover || rating) ? "on" : "off"}
-              onClick={() => setRating(index)}
-              onMouseEnter={() => setHover(index)}
-              onMouseLeave={() => setHover(rating)}
+              className={index <= (starRating) ? "on" : "off"}
             >
               <span className="star">&#9733;</span>
             </button>
@@ -34,11 +33,6 @@ export default StarRating;
 
 /* 
 
-Set rating from start from the Int                                  [x]
-Even up the Int so that it can be converted to a star               []
-Do a average int to the left of the stars                           []
-Take in Int rating from object.vote_average                         []
-Change setRating to a function you take in (setRating from object)  []
 Find a way to show half a star                                      []
 
 */
