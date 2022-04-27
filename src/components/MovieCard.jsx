@@ -1,6 +1,7 @@
 import "../styles/MovieCard.css";
+import StarRating from "./reusableComponents/starrating";
 
-const MovieCard = ({title, }) => {
+const MovieCard = ({title, rating}) => {
 
 
     const randomPrice = () => {
@@ -19,7 +20,7 @@ const MovieCard = ({title, }) => {
         </div>
         <div className="LowerInfo">
           <p>{randomPrice()} kr</p>
-          <p>55kr</p>
+          <StarRating movieRating={2.7} size={'small-star-rating'} />
         </div>
       </div>
     </div>
