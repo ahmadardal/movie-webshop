@@ -9,11 +9,12 @@ const movieSlider = () => {
     return (
         <div>
             <SimpleImageSlider
-                width={896}
-                height={504}
+                width={900}
+                height={400}
                 images={images}
                 showBullets={true}
                 showNavs={true}
+                autoPlay={true}
             />
         </div>
     );
