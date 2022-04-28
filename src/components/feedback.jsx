@@ -15,6 +15,7 @@ const Feedback = ({ id }) => {
     const [textName, setTextName] = useState('');
     const [age, SetAge] = useState(0);
     const collectionRef = collection(db, "comments");
+    
 
     useEffect(() => {
         const getComments = async () => {
@@ -27,7 +28,8 @@ const Feedback = ({ id }) => {
 
 
     const saveComments = async () => {
-        await addDoc(collectionRef, { "name": textName, "age": age, "comment": comment, "rate": rating, "movieId" : id })
+        // Vi får lägga till id här ->
+        await addDoc(collectionRef, { "name": textName, "age": age, "comment": comment, "rate": rating })
             .then(() => {
                 alert('Successfully')
             })
@@ -58,7 +60,7 @@ const Feedback = ({ id }) => {
 
             <div className="stars">
                 <label> Your rate :
-                    <ReactStars activeColor="red" count={10} size={30}
+                    <ReactStars activeColor="blue" count={5} size={30}
                         isHalf={true}
                         onChange={(rating) => { setRating(rating) }} />
                 </label>
@@ -91,7 +93,6 @@ const Feedback = ({ id }) => {
                 />
             </div>
             <div className="submitButton">
-
                 <button onClick={saveComments}>  Skicka </button>
             </div>
 
