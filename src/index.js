@@ -8,7 +8,7 @@ import Feedback from './components/feedback';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Feedback />
+    <App />
   </React.StrictMode>
 );
 
