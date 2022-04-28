@@ -1,11 +1,9 @@
 import "../styles/MovieCard.css";
 import StarRating from "./reusableComponents/starrating";
-const MovieCard = ({title, rating}) => {
 
 // TODO LIST
 // Förbättra randomPrice funktion
-
-
+// Ersätt 55kr med StarRating med korrekt storlek
 
 const MovieCard = ({ title }) => {
   const randomPrice = () => {
@@ -26,12 +24,13 @@ const MovieCard = ({ title }) => {
         </div>
         <div className="LowerInfo">
           <p>{randomPrice()} kr</p>
-          <StarRating movieRating={2.7} size={'small-star-rating'} />
+          {/* <StarRating/> */}
 
+          <p>55kr</p>
         </div>
       </div>
     </div>
   );
 };
-}
+
 export default MovieCard;

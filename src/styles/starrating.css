@@ -1,28 +1,10 @@
-#small-star-rating .star {
-  font-size: 1em;
-}
-
-#small-star-rating p {
-  font-size: 0.8em;
-    color: white;
-    margin-right: 4px;
-    margin-top: 2px;
-}
-
-#medium-star-rating {
-font-size: 1.5em;
-}
-#medium-star-rating p {
-  font-size: 1em;
-  color: black;
-}
-
 .star-rating {
   display: flex;
+  width: 250px;
   align-items: center;
 }
 .star-rating div {
-   /*  width: 40px; */
+    width: 40px;
   }
   .on {
     color: rgb(255, 209, 7);
@@ -31,16 +13,16 @@ font-size: 1.5em;
     color: #ccc;
   }
 
-  /* .star {
-    font-size: 1.5em; 
-  } */
+  .star {
+    font-size: 2.5em; 
+  }
 
   .star-rating p {
-    /* margin-top: 25px;
+    margin-top: 25px;
     margin-left: 10px;
-    margin-right: 20px; */
+    margin-right: 20px;
     font-weight: bold;
-    
+    font-size: 1.3em;
   }
 
   
