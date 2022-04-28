@@ -6,7 +6,7 @@ import { db } from './firebase-config';
 import { collection, getDocs, addDoc, doc } from 'firebase/firestore';
 import { async } from "@firebase/util";
 
-
+// kommentar
 const Feedback = ({ id }) => {
 
     const [comment, SetComment] = useState('');
