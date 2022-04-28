@@ -26,7 +26,7 @@ const MovieCard = ({ title }) => {
           <p>{randomPrice()} kr</p>
           {/* <StarRating/> */}
 
-          <p>55kr</p>
+          <StarRating movieRating={2.7} size={'small-star-rating'} />
         </div>
       </div>
     </div>
