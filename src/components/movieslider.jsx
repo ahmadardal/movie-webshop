@@ -1,13 +1,12 @@
 import "../styles/movieSlider.css";
 import { MdChevronLeft,MdChevronRight } from "react-icons/md";
 import Dots from 'react-carousel-dots';
-
-const movieSlider = (movieCard) => {
+import MovieCard from "./MovieCard"
+const movieSlider = () => {
 
   const slides = [
     {
       image: 'https://picsum.photos/200/300',
-      // image: require("../assets/img1.jpg"),
       title: "Här har vi den allra första bilden", 
       rating:5,       
   },
@@ -45,12 +44,12 @@ const movieSlider = (movieCard) => {
 
   const slideLeft = () => {
       var slider = document.getElementById("slider");
-      slider.scrollLeft = slider.scrollLeft + 500;
+      slider.scrollLeft = slider.scrollLeft - 500;
   }
 
   const slideRight = () => {
     var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft - 500;
+    slider.scrollLeft = slider.scrollLeft + 500;
   }
 
   const cardClicked = () => {
@@ -59,20 +58,21 @@ const movieSlider = (movieCard) => {
 
   return (
     <div className="main-slider-container">
-         
-      <MdChevronLeft size={40} className="slider-icon left" onClick={slideLeft}/>
+      <MdChevronLeft size={40} className="slider-icon left" onClick={slideLeft}/>   
+      
       <div id="slider">
+      
   
        { slides.map((slide,index) => {
           return (
             <div className="slider-card" key={index} onClick={cardClicked}>            
-            
-              <div className="slider-card-image" style={{backgroundImage:`url(${slide.image})`}}></div>
-              <p className="slider-card-title">{slide.title}</p>
-              <p className="slider-card-rating">Rating {slide.rating}</p>
+            <center>
+            <MovieCard />
+            </center>
             </div>
           )
         })}
+          
          <Dots className="dots" length={7} active={1} />
       </div>
       <MdChevronRight size={40} className="slider-icon right" onClick={slideRight}/>
