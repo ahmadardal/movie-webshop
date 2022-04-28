@@ -1,0 +1,28 @@
+.mainContainer{
+
+    display: grid;
+    gap: 2px;
+    background-color: #2196F3;
+    grid-template-areas: '. .' 'stars stars' 'comments comments' 'submitButton submitButton' ;
+}
+
+.mainContainer div{
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.stars {
+    grid-area: stars;
+}
+
+.comments {
+    display: flex;
+
+    grid-area: comments;
+}
+
+.submitButton {
+    grid-area: submitButton;
+    padding-left: 200px;
+}
+
