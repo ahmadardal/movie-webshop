@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "../../styles/starrating.css";
 
-const StarRating = ({movieRating}) => {
+const StarRating = ({movieRating, size}) => {
 
-  // Comment for fun
     const rating = movieRating;
 
     // Rounding up rating for stars
-    const starRating = parseInt(Math.round(rating));
+    const starRating = parseInt(Math.round(rating) / 2);
 
 
+    
     return (
-      <div className="star-rating">
+      <div className="star-rating" id={size}>
           <p>{rating}</p>
         {[...Array(5)].map((star, index) => {
           index += 1;
