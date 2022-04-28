@@ -67,21 +67,7 @@ const Feedback = ({ id }) => {
             </div>
 
 
-            <div>
-                {comments.map((comment) => {
-                    return (
-                        <div>
-
-                            <h1>Name : {comment.name}</h1>
-                            <h1>Age : {comment.age}</h1>
-                            <h1>Rate : {comment.rate}</h1>
-                            <h1>Comment : {comment.comment}</h1>
-                            <div>------</div>
-                        </div>
-                    )
-                })}
-
-            </div>
+         
 
 
             <div className="comments">
