@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/FeedbackForm.css";
 import ReactStars from "react-rating-stars-component";
-import { db } from "./firebase-config";
+import { db } from "../firebase-config";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
 // kommentar
@@ -67,7 +67,7 @@ const FeedbackForm = ({ id }) => {
           {" "}
           Your rate :
           <ReactStars
-            activeColor="blue"
+            activeColor="#f7be00"
             count={5}
             size={30}
             isHalf={true}
@@ -76,20 +76,6 @@ const FeedbackForm = ({ id }) => {
             }}
           />
         </label>
-      </div>
-
-      <div>
-        {comments.map((comment) => {
-          return (
-            <div>
-              <h1>Name : {comment.name}</h1>
-              <h1>Age : {comment.age}</h1>
-              <h1>Rate : {comment.rate}</h1>
-              <h1>Comment : {comment.comment}</h1>
-              <div>------</div>
-            </div>
-          );
-        })}
       </div>
 
       <div className="comments">

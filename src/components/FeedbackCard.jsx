@@ -1,4 +1,5 @@
-function Feedback({feedback, author, age}) {
+import '../styles/FeedbackCard.css';
+function FeedbackCard({feedback, author, age}) {
     return <div className="feedbackContainer">
         <div className="feedbackText">
             <p>" {feedback} "</p>
@@ -9,4 +10,4 @@ function Feedback({feedback, author, age}) {
     </div>;
 }
 
-export default Feedback
+export default FeedbackCard;
