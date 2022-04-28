@@ -33,5 +33,5 @@ const MovieCard = ({ title }) => {
     </div>
   );
 };
-
+}
 export default MovieCard;
