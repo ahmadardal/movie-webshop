@@ -6,7 +6,7 @@ const StarRating = ({movieRating, size}) => {
     const rating = movieRating;
 
     // Rounding up rating for stars
-    const starRating = parseInt(Math.round(rating));
+    const starRating = parseInt(Math.round(rating) / 2);
 
 
     return (
