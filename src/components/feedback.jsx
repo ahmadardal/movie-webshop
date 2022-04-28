@@ -1,6 +1,11 @@
-function Feedback (){
-    return <div className="Feedback">
-        Feedback ruta Milad
+function Feedback({feedback, author, age}) {
+    return <div className="feedbackContainer">
+        <div className="feedbackText">
+            <p>" {feedback} "</p>
+        </div>
+        <div className="feedbackAuthor">
+            <p>{`${author}, ${age}`}</p>
+        </div>
     </div>;
 }
 
