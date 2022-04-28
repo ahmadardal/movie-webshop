@@ -1,4 +1,4 @@
-import BaseMain from '../components/basecomponents/basemain';
+import BaseMain from '../components/baseComponents/basemain';
 
 const Home = () => {
   return (
