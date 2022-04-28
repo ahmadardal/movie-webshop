@@ -9,7 +9,7 @@ const StarRating = ({movieRating, size}) => {
     const starRating = parseInt(Math.round(rating) / 2);
 
 
-    // Trallalala
+    
     return (
       <div className="star-rating" id={size}>
           <p>{rating}</p>
