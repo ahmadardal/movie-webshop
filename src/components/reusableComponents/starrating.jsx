@@ -3,6 +3,7 @@ import "../../styles/starrating.css";
 
 const StarRating = ({movieRating}) => {
 
+  // Comment for fun
     const rating = movieRating;
 
     // Rounding up rating for stars
