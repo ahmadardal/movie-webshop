@@ -4,6 +4,7 @@ import Search from "../search";
 import Movies from "../movies";
 import MovieCard from "../MovieCard";
 import MovieSlider from "../movieslider";
+import BurgerMenyIcon from "../../assets/hamburger.png"
 // import "../assets/happy.png";
 
 const BaseMain = ({ headerContent, mainContent, footerContent }) => {
@@ -16,6 +17,9 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
         display: "flex",
       }}
     >
+      <img 
+      src={BurgerMenyIcon}
+      id="burgerMenyIcon"/>
       <div className="Sidebar">
         <MenuItem
           title="Hem"

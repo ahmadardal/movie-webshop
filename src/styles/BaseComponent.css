@@ -46,20 +46,33 @@
     justify-content: flex-start;
     -webkit-app-region: drag;
     align-self: flex-start;
-    width: 130px;
+    /* width: 130px; */
     height: 100vh;
     z-index: 2;
     /* background: transparent; */
     background: #ffffff;
     border-right: 0.2px solid #abababba;
+    padding: 20px;
     filter: drop-shadow(1px 1px 0.5px rgba(103, 100, 100, 0.25));
+  }
+
+  #burgerMenyIcon {
+    width: 90px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    display: none;
   }
 
   @media (max-width: 600px) { 
 
     .Sidebar {
-      background-color: green;
+      display: none;
       width: 50px;
+    }
+
+    #burgerMenyIcon {
+      display: block;
     }
     
   }
