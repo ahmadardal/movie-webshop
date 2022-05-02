@@ -1,11 +1,11 @@
-/* .basemain {
+.basemain {
   display: grid;
   grid-template-rows: 100px 80px 400px 700px;
   grid-auto-flow: column;
   font-size: 28px;
   text-align-last: center;
   text-justify: initial;
-} */
+}
 
 /* Header Styles */
 
