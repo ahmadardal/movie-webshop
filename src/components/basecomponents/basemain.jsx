@@ -5,9 +5,12 @@ import Movies from "../movies";
 import MovieCard from "../MovieCard";
 import MovieSlider from "../movieslider";
 import BurgerMenyIcon from "../../assets/hamburger.png"
+import { useState } from "react";
 // import "../assets/happy.png";
 
 const BaseMain = ({ headerContent, mainContent, footerContent }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <div
       style={{
@@ -19,18 +22,21 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
     >
       <img 
       src={BurgerMenyIcon}
-      id="burgerMenyIcon"/>
+      id="burgerMenyIcon"
+      alt="Menu"
+      onClick={() => setShowMobileMenu(!showMobileMenu)}
+      /> 
+
+      {showMobileMenu ? (
+        <div className="mobileMenu">
+          <MenuList />
+        </div>
+      ) : (
+        <div />
+      )}
+
       <div className="Sidebar">
-        <MenuItem
-          title="Hem"
-          image={require("../../assets/home.png")}
-          navigatesTo=""
-        />
-        <MenuItem
-          title="Register"
-          image={require("../../assets/happy.png")}
-          navigatesTo="Register"
-        />
+       <MenuList />
       </div>
 
       <div className="contentContainer">
@@ -51,5 +57,22 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
     </div>
   );
 };
+
+const MenuList = () => {
+  return (
+    <div>
+      <MenuItem
+      title="Hem"
+      image={require("../../assets/home.png")}
+      navigatesTo=""
+      />
+      <MenuItem
+        title="Register"
+        image={require("../../assets/happy.png")}
+        navigatesTo="Register"
+      />
+    </div>
+  )
+}
 
 export default BaseMain;
