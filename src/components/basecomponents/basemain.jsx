@@ -36,7 +36,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
         <div className="headContent">
           {headerContent}
           <Search />
-          <MovieCard />
+          {/* <MovieCard /> */}
         </div>
 
         <div className="mainContent" style={{ marginTop: 30 }}>

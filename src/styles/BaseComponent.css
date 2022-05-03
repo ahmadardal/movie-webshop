@@ -87,7 +87,7 @@
       justify-content: center;
     }
     
-    .contentContainer {
+    #baseMainContentContainer {
       flex-direction: column;
     }
   }
