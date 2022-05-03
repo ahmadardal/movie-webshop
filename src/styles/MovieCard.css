@@ -1,4 +1,4 @@
-.container {
+.movieCardContainer {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 280px;
@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-.Image {
+.movieCardImage {
     position: inherit;
     bottom: 0px;
     right: 0px;
@@ -27,7 +27,7 @@ img {
     object-fit: contain;
 }
 
-.InfoContent {
+.movieCardInfoContent {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -40,7 +40,7 @@ img {
     justify-content: space-around;
 }
 
-.InfoContent p {
+.movieCardInfoContent p {
     color: white;
     font-weight: 700;
     font-size: 11pt;
@@ -49,13 +49,13 @@ img {
 
 
 
-.UpperInfo {
+.movieCardUpperInfo {
     /* Till senare */
     margin-left: 5px;
     margin-bottom: 8px;
 }
 
-.LowerInfo {
+.movieCardLowerInfo {
     display: flex;
     justify-content: space-between;
     margin-left: 5px;

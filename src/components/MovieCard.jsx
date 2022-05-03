@@ -11,18 +11,18 @@ const MovieCard = ({ title }) => {
   };
 
   return (
-    <div className="container">
+    <div className="movieCardContainer">
       <img
-        className="Image"
+        className="movieCardImage"
         alt="The Batman"
         src={require("../assets/batman.png")}
       />
 
-      <div className="InfoContent">
-        <div className="UpperInfo">
+      <div className="movieCardInfoContent">
+        <div className="movieCardUpperInfo">
           <p>The Batman</p>
         </div>
-        <div className="LowerInfo">
+        <div className="movieCardLowerInfo">
           <p>{randomPrice()} kr</p>
           {/* <StarRating/> */}
 
