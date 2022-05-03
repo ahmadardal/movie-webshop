@@ -62,7 +62,7 @@
   }
 
   #burgerMenyIcon {
-    width: 70px;
+    width: 30px;
     position: fixed;
     left: 20px;
     top: 20px;
@@ -89,5 +89,15 @@
     
     #baseMainContentContainer {
       flex-direction: column;
+    }
+
+    #headerContentContainer {
+      align-self: flex-start;
+    }
+
+    #pageTitle {
+      margin-left: 50px;
+      margin-top: 20px;
+      font-size: 1.2em;
     }
   }

@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   max-width: 1473px;
-  height: 35%;
+  height: 320px;
   background: black;
 }
 #slider {
@@ -65,4 +65,33 @@
 .dots {
   position: fixed;
   align-items: center;
+}
+@media (max-width: 600px) {
+
+  .main-slider-container {
+    height: 200px;
+  }
+
+  #slider {
+    width: 100%;
+    height: 200px;
+  }
+
+  .slider-card {
+    width: 120px;
+    object-fit:fill;
+    background: black;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+
+  .slider-icon.left, .slider-icon.right {
+    display: none;
+  }
+  
+  
 }

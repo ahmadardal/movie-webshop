@@ -5,9 +5,7 @@
   
 }
 
-#headerContentContainer {
-  text-align: center;
-}
+
 .basemain {
   display: grid;
   grid-template-rows: 100px 80px 400px 700px;
@@ -105,4 +103,11 @@ button {
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+  #headerContentContainer {
+    display: flex;
+  }
 }
