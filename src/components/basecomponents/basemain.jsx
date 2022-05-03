@@ -12,14 +12,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100vw",
-        backgroundColor: "#f8f8f8",
-        display: "flex",
-      }}
-    >
+    <div id="baseMainContentContainer">
       <img 
       src={BurgerMenyIcon}
       id="burgerMenyIcon"

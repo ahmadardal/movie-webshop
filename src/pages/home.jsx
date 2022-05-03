@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <BaseMain
       headerContent={
-        <div>
+        <div id='headerContentContainer'>
           <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
         </div>}
       mainContent={
