@@ -2,6 +2,7 @@ import "../styles/movieSlider.css";
 import { MdChevronLeft,MdChevronRight } from "react-icons/md";
 import Dots from 'react-carousel-dots';
 import MovieCard from "./MovieCard"
+import { Link } from "react-router-dom";
 const movieSlider = () => {
 
   const slides = [
@@ -52,8 +53,12 @@ const movieSlider = () => {
     slider.scrollLeft = slider.scrollLeft + 500;
   }
 
+  // const cardClicked = () => {
+  //   alert("You clicked the card");
+  // }
+
   const cardClicked = () => {
-    alert("You clicked the card");
+    <Link></Link> ;
   }
 
   return (
@@ -65,11 +70,13 @@ const movieSlider = () => {
   
        { slides.map((slide,index) => {
           return (
-            <div className="slider-card" key={index} onClick={cardClicked}>            
+            <Link to="/SelectedMovie">          
+            <div className="slider-card" key={index}>            
             <center>
             <MovieCard />
             </center>
             </div>
+            </Link> 
           )
         })}
           
