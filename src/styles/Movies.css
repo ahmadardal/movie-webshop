@@ -1,0 +1,12 @@
+.discoverMoviesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightgrey;
+}
+
+.moviesMovieContainer {
+    background-color: lightblue;
+    width: 150px;
+    height: 200px;
+}

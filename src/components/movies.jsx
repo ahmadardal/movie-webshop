@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import StarRating from "./reusableComponents/starrating";
 import GetMovieData from '../components/GetMovieData';
+import "../../src/styles/Movies.css";
 
 const Movies = () => {
     const [tempMovies, setTempMovies] = useState(null);
@@ -26,6 +27,7 @@ const Movies = () => {
         listOfMovies = tempMovies.results.map(movie => (
             <div key={movie.id} className="moviesMovieContainer">
                 <p>{movie.title}</p>
+                <img src={movie.poster_path} alt="Movie image" />
             </div>
         )); 
     }
