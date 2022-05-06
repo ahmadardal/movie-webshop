@@ -12,7 +12,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
-    <div id="baseMainContentContainer">
+    <div className="baseMainContentContainer">
       <img 
       src={BurgerMenyIcon}
       id="burgerMenyIcon"
@@ -33,6 +33,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
       </div>
 
       <div className="contentContainer">
+        <div className="margin">
         <div className="headContent">
           {headerContent}
           <Search />
@@ -46,6 +47,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
         </div>
 
         <div className="footerContent">{footerContent}</div>
+        </div>
       </div>
     </div>
   );
@@ -62,7 +64,6 @@ const MenuList = () => {
       <MenuItem
         title="Register"
         image={require("../../assets/happy.png")}
-        navigatesTo="Register"
       />
     </div>
   )

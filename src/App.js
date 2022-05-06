@@ -16,13 +16,11 @@ const App = () => {
   }, []);
 
   return (
-    <main>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
         </Routes>
       </Router>
-    </main>
   );
 };
 
