@@ -72,15 +72,14 @@ const movieSlider = () => {
           return (
             <Link to="/SelectedMovie">          
             <div className="slider-card" key={index}>            
-            <center>
-            <MovieCard />
-            </center>
+
+            <MovieCard img={require("../assets/batman.png")} title="The Batman"/>
+
             </div>
             </Link> 
           )
         })}
           
-         <Dots className="dots" length={7} active={1} />
       </div>
       <MdChevronRight size={40} className="slider-icon right" onClick={slideRight}/>
     </div>

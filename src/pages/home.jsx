@@ -5,6 +5,9 @@ import FeedbackForm from "../components/FeedbackForm";
 import Button from "../components/reusableComponents/button";
 import { actions } from "../state/reducers/counterReducer.js";
 import ShoppingCartContainer from "../components/shoppingCart/shoppingCartContainer";
+import Movies from "../components/movies";
+import MovieCard from "../components/MovieCard";
+import MovieSlider from "../components/movieslider";
 
 const Home = () => {
   const value = useSelector((state) => state.counter);
@@ -27,6 +30,8 @@ const Home = () => {
       mainContent={
         <div>
           <h1>{value}</h1>
+          <MovieSlider />
+          <Movies />
           <Button btnText={"Hello"} handleClick={btnPress} />
           <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
           <FeedbackForm />

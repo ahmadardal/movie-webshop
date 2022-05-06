@@ -47,8 +47,7 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
 
         {hiddenMenu ? <ShoppingCartContainer /> : 
         <div className="mainContent" style={{ marginTop: 30 }}>
-          <MovieSlider />
-          <Movies />
+
           {mainContent}
         </div> }
         
@@ -67,10 +66,6 @@ const MenuList = () => {
       title="Hem"
       image={require("../../assets/home.png")}
       navigatesTo=""
-      />
-      <MenuItem
-        title="Register"
-        image={require("../../assets/happy.png")}
       />
     </div>
   )
