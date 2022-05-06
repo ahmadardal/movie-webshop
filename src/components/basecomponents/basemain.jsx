@@ -15,28 +15,12 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   const [itemCount, setItemCount] = useState(9);
   return (
     <div className="baseMainContentContainer">
-      <img 
-      src={BurgerMenyIcon}
-      id="burgerMenyIcon"
-      alt="Menu"
-      onClick={() => setShowMobileMenu(!showMobileMenu)}
-      /> 
-
-      {showMobileMenu ? (
-        <div className="mobileMenu">
-          <MenuList />
-        </div>
-      ) : (
-        <div />
-      )}
-
-      <div className="Sidebar">
-       <MenuList />
-      </div>
+ 
+      
 
       <div className="contentContainer">
         <div className="margin">
-        <div className="headContent">
+        <div className="headContent">433
         <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
             <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
             <p>{itemCount > 0 && itemCount}</p>
@@ -59,16 +43,6 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   );
 };
 
-const MenuList = () => {
-  return (
-    <div>
-      <MenuItem
-      title="Hem"
-      image={require("../../assets/home.png")}
-      navigatesTo=""
-      />
-    </div>
-  )
-}
+
 
 export default BaseMain;

@@ -8,10 +8,16 @@ import ShoppingCartContainer from "../components/shoppingCart/shoppingCartContai
 import Movies from "../components/movies";
 import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
+import BurgerMenyIcon from "../assets/hamburger.png"
+import MenuItem from "../components/basecomponents/menuitem";
+import { useState } from "react";
+import "../styles/Home.css"
 
 const Home = () => {
   const value = useSelector((state) => state.counter);
   const dispatch = useDispatch();
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const increase = () => dispatch(actions.increase());
   const decrease = () => dispatch(actions.decrease());
@@ -21,25 +27,57 @@ const Home = () => {
   }
 
   return (
-    <BaseMain
-      headerContent={
-        <div id="headerContentContainer">
-          <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
+    <div className="homeBaseContainer">
+      <img 
+      src={BurgerMenyIcon}
+      id="burgerMenyIcon"
+      alt="Menu"
+      onClick={() => setShowMobileMenu(!showMobileMenu)}
+      /> 
+      
+      {showMobileMenu ? (
+        <div className="mobileMenu">
+          <MenuList />
         </div>
-      }
-      mainContent={
-        <div>
-          <h1>{value}</h1>
-          <MovieSlider />
-          <Movies />
-          <Button btnText={"Hello"} handleClick={btnPress} />
-          <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
-          <FeedbackForm />
-          <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
-        </div>
-      }
-    />
+      ) : (
+        <div />
+      )}
+
+      <div className="Sidebar">
+        <MenuList />
+      </div>
+      <BaseMain
+        headerContent={
+          <div id="headerContentContainer">
+            <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
+          </div>
+        }
+        mainContent={
+          <div>
+            <h1>{value}</h1>
+            <MovieSlider />
+            <Movies />
+            <Button btnText={"Hello"} handleClick={btnPress} />
+            <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
+            <FeedbackForm />
+            <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
+          </div>
+        }
+      />
+    </div>
   );
 };
+
+const MenuList = () => {
+  return (
+    <div>
+      <MenuItem
+      title="Hem"
+      image={require("../assets/home.png")}
+      navigatesTo=""
+      />
+    </div>
+  )
+}
 
 export default Home;
