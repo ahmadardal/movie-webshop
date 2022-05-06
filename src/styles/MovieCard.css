@@ -62,3 +62,18 @@ img {
     margin-right: 5px;
     margin-bottom: 8px;
 }
+
+@media (max-width: 600px) {
+
+    .movieCardContainer {
+        height: 180px;
+        width: 165px;
+        background-color: black;
+        position: relative;
+        border: 1px solid #000000;
+        box-sizing: content-box;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+}
