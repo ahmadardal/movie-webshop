@@ -6,6 +6,13 @@
   display: flex;
   overflow: hidden;
 } 
+.menuWrapper{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
 
   #pageTitle {
     font-size: 30pt;

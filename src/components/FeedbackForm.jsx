@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/FeedbackForm.css";
 import ReactStars from "react-rating-stars-component";
-import { db } from "../firebase-config";
+import { db } from "./firebase-config";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
 // kommentar
