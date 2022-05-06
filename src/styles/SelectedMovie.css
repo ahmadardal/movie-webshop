@@ -1,20 +1,22 @@
 .selected-movie-container {
+        width: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
-        position: relative;
+        position: absolute;
+}
+
+.background-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .selected-movie-info {
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+    margin-left: 15px;  
+    padding: 10px;  
+    align-items: baseline;
 }
 
 .background-image-container {
@@ -36,16 +38,53 @@
 }
 
 .button-add {
+  
+}
+
+.feedback-info {  
     display: flex;
-    justify-content:flex-end;
+    justify-content: space-around;
+    padding-left: 15px;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.feedback-info h1 {
+    display: flex;
+    align-self: flex-end;
+}
+
+.price {
+    display: flex;
+    margin-top: 0px; 
+    flex-direction: column;
+}
+
+.price p {
+    display: flex;
+    
+}
+
+.price button {
+    display: flex;
     padding: 16px;
     background-color: green;
     border-radius: 16px;
-    bottom: 90px;
-    left: 700px; 
     width: fit-content;
+    margin-top: 10;
 }
 
-.feedback-info {
-    padding-left: 15px;
+.movie-info {
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-container {
+    display: flex;
+}
+
+.title-rating {
+    display: flex;
+    flex-direction: column;
+   
 }
