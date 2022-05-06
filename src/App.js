@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
 import ShoppingCartContainer from "./components/shoppingCart/shoppingCartContainer";
+import SelectedMovie from "./components/SelectedMovie";
 
 const App = () => {
   const [listOfMovies, setListOfMovies] = useState(null);
@@ -20,6 +21,8 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/SelectedMovie" element={
+            <SelectedMovie />} />
         </Routes>
       </Router>
   );

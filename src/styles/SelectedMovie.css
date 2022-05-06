@@ -1,0 +1,90 @@
+.selected-movie-container {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+}
+
+.background-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.selected-movie-info {
+    flex-direction: row;
+    display: flex;
+    margin-left: 15px;  
+    padding: 10px;  
+    align-items: baseline;
+}
+
+.background-image-container {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(98, 98, 98, 0) 0%, rgba(22, 22, 22, 0.81) 28.65%, #000000 88.02%);
+    width: 100%;
+    border: 2px solid black;
+}
+
+.background-image-sm {
+    display: flex;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    width: 70%;
+    object-fit: contain;
+}
+
+.button-add {
+  
+}
+
+.feedback-info {  
+    display: flex;
+    justify-content: space-around;
+    padding-left: 15px;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.feedback-info h1 {
+    display: flex;
+    align-self: flex-end;
+}
+
+.price {
+    display: flex;
+    margin-top: 0px; 
+    flex-direction: column;
+}
+
+.price p {
+    display: flex;
+    
+}
+
+.price button {
+    display: flex;
+    padding: 16px;
+    background-color: green;
+    border-radius: 16px;
+    width: fit-content;
+    margin-top: 10;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-container {
+    display: flex;
+}
+
+.title-rating {
+    display: flex;
+    flex-direction: column;
+   
+}
