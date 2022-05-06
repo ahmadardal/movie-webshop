@@ -1,0 +1,12 @@
+.menuWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: rgb(124, 121, 116);
+    overflow: visible;
+    z-index: 99;
+  }

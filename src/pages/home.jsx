@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import BaseMain from "../components/basecomponents/basemain";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
@@ -8,8 +9,11 @@ import ShoppingCartContainer from "../components/shoppingCart/shoppingCartContai
 import Movies from "../components/movies";
 import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
+import '../styles/Home.css';
 
 const Home = () => {
+  const [hiddenMenu, setHiddenMenu] = useState(false);
+  const [itemCount, setItemCount] = useState(9);
   const value = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
@@ -21,24 +25,33 @@ const Home = () => {
   }
 
   return (
-    <BaseMain
-      headerContent={
-        <div id="headerContentContainer">
-          <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
-        </div>
-      }
-      mainContent={
-        <div>
-          <h1>{value}</h1>
-          <MovieSlider />
-          <Movies />
-          <Button btnText={"Hello"} handleClick={btnPress} />
-          <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
-          <FeedbackForm />
-          <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
-        </div>
-      }
-    />
+    <div> 
+      <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+      <p>{itemCount > 0 && itemCount}</p>
+        <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
+        {hiddenMenu ? <ShoppingCartContainer /> : ''}
+      </div>
+      <BaseMain
+        headerContent={
+          <div id="headerContentContainer">
+
+            <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
+          </div>
+        }
+        mainContent={
+          <div>
+            <h1>{value}</h1>
+            <MovieSlider />
+            <Movies />
+            <Button btnText={"Hello"} handleClick={btnPress} />
+            <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
+            <FeedbackForm />
+            <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
+          </div>
+        }
+      />
+
+    </div>
   );
 };
 
