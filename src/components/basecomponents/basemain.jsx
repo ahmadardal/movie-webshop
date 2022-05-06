@@ -11,8 +11,7 @@ import FeedbackForm from "../FeedbackForm";
 
 const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [hiddenMenu, setHiddenMenu] = useState(false);
-  const [itemCount, setItemCount] = useState(9);
+  
   return (
     <div className="baseMainContentContainer">
       <img 
@@ -37,19 +36,15 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
       <div className="contentContainer">
         <div className="margin">
         <div className="headContent">
-        <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
-            <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
-            <p>{itemCount > 0 && itemCount}</p>
-          </div>
+
           <Search />
           {/* <MovieCard /> */}
         </div>
-
-        {hiddenMenu ? <ShoppingCartContainer /> : 
+        
         <div className="mainContent" style={{ marginTop: 30 }}>
-
-          {mainContent}
-        </div> }
+        {mainContent}
+       
+        </div> 
         
         <div className="footerContent">{footerContent}</div>
         </div>

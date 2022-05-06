@@ -1,4 +1,4 @@
-import '../../styles/shoppingCart.css'
+
 import image from '../../assets/batman.png'
 
 
