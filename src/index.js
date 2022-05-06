@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Feedback from './components/feedback';
+import ShoppingCartContainer from './components/shoppingCart/shoppingCartContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

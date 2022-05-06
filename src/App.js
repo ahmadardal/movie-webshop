@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
+import ShoppingCartContainer from "./components/shoppingCart/shoppingCartContainer";
 
 const App = () => {
   const [listOfMovies, setListOfMovies] = useState(null);

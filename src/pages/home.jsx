@@ -1,20 +1,26 @@
+
 import BaseMain from '../components/basecomponents/basemain';
 import Feedback from '../components/feedback';
+import ShoppingCartContainer from '../components/shoppingCart/shoppingCartContainer';
+
+
 const Home = () => {
+
+
   return (
+
     <BaseMain
       headerContent={
-        <div>
+
+        <div className='headerWrapper'>
           <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
-        </div>}
+        </div> }
       mainContent={
+        
         <div>
-          <Feedback feedback="Hej" author="Ahmad Ardal" age="18"/>
-        <p style={{textAlign: 'center'}}>Hundar Utan Hem är en ideell förening som omplacerar svenska hundar och räddar avlivningshotade hundar på Irland, Kanarieöarna och i Polen.
+           <Feedback feedback="Hej" author="Ahmad Ardal" age="18" />
+          
 
-Föreningen grundades 2005 med ett mål – att rädda hundar som riskerar att avlivas och ge dem en andra chans till ett lyckligt liv.
-
-Vill du hjälpa en hund, samtidigt som du får en kär familjemedlem?</p>
         </div>
       }
     />
