@@ -31,25 +31,27 @@ const SelectedMovie = () => {
                <img className="background-image-sm" src={require("../assets/img2.jpg")} />
             </div>
             <div className="background-info-container">
-            <div className="selected-movie-info">
-                <div className="title-rating">
-                <h1>Title</h1>
-                <StarRating movieRating={2.7} size={'medium-star-rating'} /> 
-                </div>
-            <div className="price">  
-                <p>Price: 47 kr</p>
-                <button>Lägg till</button>
-            </div>     
-            </div>   
+                <div className="selected-movie-info">
+                    <div className="title-rating">
+                        <h1>Title</h1>
+                        <StarRating movieRating={2.7} size={'medium-star-rating'} /> 
+                    </div>
+                    <div className="price">  
+                        <h1>Pris 47 kr</h1>
+                        <button>Lägg till</button>
+                    </div>     
+                </div>   
             <div className="movie-info">
                 <p>Här ska det tas in info om filmen</p>
             </div>
-            <div className="movie-feedback">
-                <FeedbackForm />
-            </div>
-            <div className="feedback-info">
-                <h1>Recensioner</h1>
-                <FeedbackCard className="FeedbackCard" />
+            <div className="feedback-div">
+                <div className="movie-feedback">
+                    <FeedbackForm />
+                </div>
+                <div className="feedback-info">
+                    <h1>Recensioner</h1>
+                    <FeedbackCard className="FeedbackCard" />
+                </div>
             </div>
             </div>
         </div>
