@@ -14,17 +14,10 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   
   return (
     <div className="baseMainContentContainer">
- 
-      
 
       <div className="contentContainer">
         <div className="margin">
         <div className="headContent">433
-        <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
-            <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
-            <p>{itemCount > 0 && itemCount}</p>
-          </div>
-
           <Search />
           {/* <MovieCard /> */}
         </div>

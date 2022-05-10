@@ -1,4 +1,4 @@
-import '../../styles/ShoppingCart.css';
+import '../../styles/shoppingCart.css';
 import CardImg from '../../assets/cart.png'
 
 

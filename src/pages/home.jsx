@@ -11,7 +11,6 @@ import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
 import BurgerMenyIcon from "../assets/hamburger.png"
 import MenuItem from "../components/basecomponents/menuitem";
-import { useState } from "react";
 import "../styles/Home.css"
 
 
