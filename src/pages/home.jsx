@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import BaseMain from "../components/basecomponents/basemain";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
@@ -13,7 +14,10 @@ import MenuItem from "../components/basecomponents/menuitem";
 import { useState } from "react";
 import "../styles/Home.css"
 
+
 const Home = () => {
+  const [hiddenMenu, setHiddenMenu] = useState(false);
+  const [itemCount, setItemCount] = useState(9);
   const value = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
@@ -43,8 +47,13 @@ const Home = () => {
         <div />
       )}
 
-      <div className="Sidebar">
+      <div className="Sidebar">  
         <MenuList />
+      </div>  
+      <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+        <p>{itemCount > 0 && itemCount}</p>
+        <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
+        {hiddenMenu ? <ShoppingCartContainer /> : ''}
       </div>
       <BaseMain
         headerContent={

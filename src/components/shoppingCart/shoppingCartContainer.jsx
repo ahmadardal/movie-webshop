@@ -1,4 +1,4 @@
-import '../../styles/shoppingCart.css'
+
 import ShoppingCart from './shoppingCart';
 import TotalPrice from './totalPrice';
 
