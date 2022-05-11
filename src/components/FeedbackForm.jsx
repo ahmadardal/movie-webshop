@@ -7,7 +7,7 @@ import { collection, getDocs, addDoc } from "firebase/firestore";
 // kommentar
 const FeedbackForm = ({ id }) => {
   const [comment, SetComment] = useState("");
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]); 
   const [rating, setRating] = useState(2);
   const [textName, setTextName] = useState("");
   const [age, SetAge] = useState(0);

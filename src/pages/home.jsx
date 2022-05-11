@@ -11,9 +11,10 @@ import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
 import '../styles/Home.css';
 
-const Home = () => {
-  const [hiddenMenu, setHiddenMenu] = useState(false);
-  const [itemCount, setItemCount] = useState(9);
+const Home = (props) => {
+
+  const { hiddenMenu, cartItems, totalPrice, itemCount, removeItem, setHiddenMenu } = props;
+
   const value = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
@@ -25,12 +26,30 @@ const Home = () => {
   }
 
   return (
-    <div> 
-      <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
-      <p>{itemCount > 0 && itemCount}</p>
-        <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
-        {hiddenMenu ? <ShoppingCartContainer /> : ''}
+    <div>
+      <div id="deneme">
+        {hiddenMenu ? <ShoppingCartContainer
+          hiddenMenu={hiddenMenu}
+          cartItems={cartItems}
+          itemCount={itemCount}
+          removeItem={removeItem}
+          totalPrice={totalPrice} /> : ''}
       </div>
+        <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+          <p>{itemCount > 0 && itemCount}</p>
+          <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
+      
+          {/* {hiddenMenu ? <ShoppingCartContainer
+          hiddenMenu={hiddenMenu}
+          cartItems={cartItems}
+          itemCount={itemCount}
+          removeItem={removeItem}
+          totalPrice={totalPrice} /> : ''} */}
+  
+
+        </div>
+
+
       <BaseMain
         headerContent={
           <div id="headerContentContainer">
