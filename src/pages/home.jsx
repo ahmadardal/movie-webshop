@@ -61,6 +61,7 @@ const Home = (props) => {
           removeItem={removeItem}
           totalPrice={totalPrice} /> : ""} 
       </div>
+      </div>
       <BaseMain
         headerContent={
           <div id="headerContentContainer">
@@ -80,6 +81,7 @@ const Home = (props) => {
         }
       />
     </div>
+
   );
 };
 
