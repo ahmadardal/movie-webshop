@@ -5,7 +5,7 @@ import FeedbackForm from "./FeedbackForm";
 // import { db } from "../firebase-config";
 // import { collection, getDocs, addDoc } from "firebase/firestore";
 
-const SelectedMovie = () => {
+const SelectedMovie = ({ updateCart }) => {
 
     // const FeedbackForm = ({ id }) => {
     //     const [comment, SetComment] = useState("");
