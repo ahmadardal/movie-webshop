@@ -27,7 +27,7 @@ const Home = (props) => {
 
   return (
     <div>
-
+      {/* Shopping Cart */}
         <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
           <p>{itemCount > 0 && itemCount}</p>
           <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
