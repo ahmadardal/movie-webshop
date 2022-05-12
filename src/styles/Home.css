@@ -1,0 +1,27 @@
+.menuWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  color: rgb(124, 121, 116);
+
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.deneme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 19;
+  color: rgb(124, 121, 116);
+
+  padding-top: 20px;
+  padding-right: 20px;
+}

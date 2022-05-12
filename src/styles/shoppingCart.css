@@ -1,126 +1,97 @@
-
-
-.headerWrapper {
+.shoppingCartContainer {
     display: flex;
     flex-direction: column;
-}
-
-
-.shoppingCart {
-    background-color: blueviolet;
-}
-
-.shoppingCart {
-    height: 88vh;
-    width: 100%;
-    min-height: 88vh;
-    border-radius: 0;
-  }
-
-.totalPrice {
-    background-color: aqua;
-} 
-
-
-  /* Shopping Cart */
-  /* .shoppingCartContainer {
-    width: 400px;
-    position: fixed;
-    top: 0;
-    left: -700px;
-    min-height: 100vh;
-    justify-content: flex-start;
-    opacity: 0;
-    transition: all 700ms ease-in-out;
-  } */
-
-  /* .shoppingCartContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: #e93941;
-  } */
+    height: 660px;
 
-  /* .shoppingCartContainer {
-    margin-left: 1000px;
-    margin-top: 5px;
-    cursor: pointer;
-    color: red;
-} */
-  
-  .shoppingCart {
-    width: 440px;
+    background-color: #130506;
+}
+
+.shoppingCart {
+
+    width: 500px;
+    height: 600px;
     padding: 24px 0;
-    height: 642px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 642px;
     overflow: auto;
     background: linear-gradient(135deg,
-        rgba(233, 57, 65, 1) 50%,
-        rgba(255, 255, 255, 1) 50%);
-    border-radius: 100px 0 0 0;
+            #729C5E 50%,
+            #424242 50%,
+            #A39595 50%);
     box-shadow: 1px 2px 30px 1px #130506;
-  }
-  
-  .shoppingCart .cardRow {
+}
+
+.shoppingCart .cardRow {
     width: calc(80% - 14px);
     margin: 0 0 12px 6px;
     box-shadow: 1px 2px 30px 1px #130506;
     background: #f9f9f9;
     cursor: pointer;
-  }
-  
-  .shoppingCart .cardRow .cardImg {
+}
+
+
+.shoppingCart .cardRow .cardImg {
     width: 100%;
-    height: 240px;
+    height: 140px;
     display: flex;
+    flex-direction: row;
     position: relative;
-  }
-  
-  .shoppingCart .cardRow .cardImg p {
+}
+
+.shoppingCart .cardRow .cardImg p {
     position: absolute;
-    top: 15px;
-    right: 15px;
+
+    right: 55px;
     font-size: 20px;
     line-height: 1;
-  }
-  
-  .shoppingCart .cardRow .cardImg img {
+}
+
+.shoppingCart .cardRow .cardImg h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: transform 900ms;
+}
+
+.shoppingCart .cardRow .cardImg h3:hover {
+    transform: scale(1.2);
+}
+
+.shoppingCart .cardRow .cardImg img {
     margin: auto;
-    width: 160px;
+    width: 90px;
     display: block;
     transition: transform 900ms;
-  }
-  
-  .shoppingCart .cardRow .cardImg img:hover {
+}
+
+.shoppingCart .cardRow .cardImg img:hover {
     transform: scale(1.2);
-  }
-  
-  .shoppingCart .cardRow .cardPrice {
-    background: #e93941;
+}
+
+.shoppingCart .cardRow .cardPrice {
+    background: #729C5E;
     padding: 14px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  .shoppingCart .cardRow .cardPrice p {
+}
+
+.shoppingCart .cardRow .cardPrice p {
     margin: 0;
     color: #fff;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 20px;
-  }
-  
-  .shoppingCart .cardRow .cardPrice i {
+}
+
+.shoppingCart .cardRow .cardPrice i {
     color: #f9f9f9;
     cursor: pointer;
-  }
-  
-  .shoppingCartPrice {
+}
+
+.shoppingCartPrice {
     width: 440px;
     height: 100px;
     background: #fff;
@@ -129,54 +100,33 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 1px 2px 14px 1px #130506;
-  }
-  
-  .shoppingCartPrice h2 {
+}
+
+
+.shoppingCartPrice h2 {
     margin: 12px 0 0 0;
-    color: #e93941;
-  }
-  
-  .shoppingCartPrice .allCartItems {
+    color: #424242;
+}
+
+.shoppingCartPrice .allCartItems {
     width: 70px;
     height: 70px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-  }
-  
-  .shoppingCartPrice .allCartItems .allCartItems {
+}
+
+.shoppingCartPrice .allCartItems .itemsAmountWrap {
     width: 40px;
     height: 28px;
     display: flex;
     margin-bottom: 3px;
-  }
-  
-  .shoppingCartPrice .allCartItems .itemsAmountWrap p {
+}
+
+.shoppingCartPrice .allCartItems .itemsAmountWrap p {
     margin: auto;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-  }
-  
-
-  
-  
-
-  
-    .shoppingCartContainer.hidden {
-      left: 0;
-      opacity: 1;
-    }
-  
-
-  
-    .shoppingCart .cardRow {
-      width: calc(100% - 62px);
-    }
-  
-    .shoppingCartPrice {
-      height: 12vh;
-      min-height: 12vh;
-      width: 400px;
-    }
+}
