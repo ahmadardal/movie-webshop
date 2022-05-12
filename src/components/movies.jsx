@@ -3,6 +3,7 @@ import StarRating from "./reusableComponents/starrating";
 import GetMovieData from "../components/GetMovieData";
 import MovieCard from "../components/MovieCard";
 import "../../src/styles/Movies.css";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [tempMovies, setTempMovies] = useState(null);
@@ -24,10 +25,12 @@ const Movies = () => {
   if (tempMovies != null) {
     listOfMovies = tempMovies.results.map((movie) => (
       <div key={movie.id} className="moviesMovieContainer">
-        <MovieCard
-          title={movie.title}
-          img={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-        />
+        <Link to={"/selectedmovie"}>
+          <MovieCard
+            title={movie.title}
+            img={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          />
+        </Link>
       </div>
     ));
   }
