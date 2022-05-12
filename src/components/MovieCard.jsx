@@ -5,7 +5,7 @@ import StarRating from "./reusableComponents/starrating";
 // Förbättra randomPrice funktion
 // Ersätt 55kr med StarRating med korrekt storlek
 
-const MovieCard = ({ title, img }) => {
+const MovieCard = ({ movie }) => {
   const randomPrice = () => {
     return Math.floor(Math.random() * 6) + 1;
   };
@@ -14,13 +14,13 @@ const MovieCard = ({ title, img }) => {
     <div className="movieCardContainer">
       <img
         className="movieCardImage"
-        alt="The Batman"
-        src={img}
+        alt={movie.title}
+        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
       />
 
       <div className="movieCardInfoContent">
         <div className="movieCardUpperInfo">
-          <p>The Batman</p>
+          <p>{movie.title}</p>
         </div>
         <div className="movieCardLowerInfo">
           <p>{randomPrice()} kr</p>

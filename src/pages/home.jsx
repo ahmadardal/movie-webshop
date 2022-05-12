@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import BaseMain from "../components/basecomponents/basemain";
+import BaseLayout from "../components/basecomponents/BaseLayout";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
 import Button from "../components/reusableComponents/button";
@@ -26,31 +26,30 @@ const Home = (props) => {
   }
 
   return (
-    <div>
-      <div id="deneme">
-        {hiddenMenu ? <ShoppingCartContainer
-          hiddenMenu={hiddenMenu}
-          cartItems={cartItems}
-          itemCount={itemCount}
-          removeItem={removeItem}
-          totalPrice={totalPrice} /> : ''}
-      </div>
-        <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
-          <p>{itemCount > 0 && itemCount}</p>
-          <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
+    //   <div id="deneme">
+    //     {hiddenMenu ? <ShoppingCartContainer
+    //       hiddenMenu={hiddenMenu}
+    //       cartItems={cartItems}
+    //       itemCount={itemCount}
+    //       removeItem={removeItem}
+    //       totalPrice={totalPrice} /> : ''}
+    //   </div>
+    //     <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+    //       <p>{itemCount > 0 && itemCount}</p>
+    //       <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
       
-          {/* {hiddenMenu ? <ShoppingCartContainer
-          hiddenMenu={hiddenMenu}
-          cartItems={cartItems}
-          itemCount={itemCount}
-          removeItem={removeItem}
-          totalPrice={totalPrice} /> : ''} */}
+    //       {/* {hiddenMenu ? <ShoppingCartContainer
+    //       hiddenMenu={hiddenMenu}
+    //       cartItems={cartItems}
+    //       itemCount={itemCount}
+    //       removeItem={removeItem}
+    //       totalPrice={totalPrice} /> : ''} */}
   
 
-        </div>
+    //     </div>
 
 
-      <BaseMain
+      <BaseLayout
         headerContent={
           <div id="headerContentContainer">
 
@@ -60,7 +59,7 @@ const Home = (props) => {
         mainContent={
           <div>
             <h1>{value}</h1>
-            <MovieSlider />
+            {/* <MovieSlider /> */}
             <Movies />
             <Button btnText={"Hello"} handleClick={btnPress} />
             <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />
@@ -69,8 +68,6 @@ const Home = (props) => {
           </div>
         }
       />
-
-    </div>
   );
 };
 
