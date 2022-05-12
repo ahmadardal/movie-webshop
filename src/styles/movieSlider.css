@@ -76,8 +76,8 @@
     height: 200px;
   }
 
-  .slider-card {
-    width: 120px;
+  /* .slider-card {
+    width: 60px;
     object-fit:fill;
     background: black;
     border-radius: 5px;
@@ -86,10 +86,14 @@
     margin-right: 5px;
     margin-bottom: 0px;
     cursor: pointer;
-  }
+  } */
 
   .slider-icon.left, .slider-icon.right {
     display: none;
+  }
+
+  .slider-card {
+    width: 200px;
   }
   
   

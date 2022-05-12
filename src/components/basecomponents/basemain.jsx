@@ -14,29 +14,10 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   
   return (
     <div className="baseMainContentContainer">
-      <img 
-      src={BurgerMenyIcon}
-      id="burgerMenyIcon"
-      alt="Menu"
-      onClick={() => setShowMobileMenu(!showMobileMenu)}
-      /> 
-
-      {showMobileMenu ? (
-        <div className="mobileMenu">
-          <MenuList />
-        </div>
-      ) : (
-        <div />
-      )}
-
-      <div className="Sidebar">
-       <MenuList />
-      </div>
 
       <div className="contentContainer">
         <div className="margin">
-        <div className="headContent">
-
+        <div className="headContent">433
           <Search />
           {/* <MovieCard /> */}
         </div>
@@ -54,16 +35,6 @@ const BaseMain = ({ headerContent, mainContent, footerContent }) => {
   );
 };
 
-const MenuList = () => {
-  return (
-    <div>
-      <MenuItem
-      title="Hem"
-      image={require("../../assets/home.png")}
-      navigatesTo=""
-      />
-    </div>
-  )
-}
+
 
 export default BaseMain;

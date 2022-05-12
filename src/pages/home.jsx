@@ -9,7 +9,10 @@ import ShoppingCartContainer from "../components/shoppingCart/shoppingCartContai
 import Movies from "../components/movies";
 import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
-import '../styles/Home.css';
+import BurgerMenyIcon from "../assets/hamburger.png"
+import MenuItem from "../components/basecomponents/menuitem";
+import "../styles/Home.css"
+
 
 const Home = (props) => {
 
@@ -17,6 +20,8 @@ const Home = (props) => {
 
   const value = useSelector((state) => state.counter);
   const dispatch = useDispatch();
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const increase = () => dispatch(actions.increase());
   const decrease = () => dispatch(actions.decrease());
@@ -26,34 +31,39 @@ const Home = (props) => {
   }
 
   return (
-    <div>
-      {/* Shopping Cart */}
+    <div className="homeBaseContainer">
+      <img 
+      src={BurgerMenyIcon}
+      id="burgerMenyIcon"
+      alt="Menu"
+      onClick={() => setShowMobileMenu(!showMobileMenu)}
+      /> 
       
-        <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
-          <p>{itemCount > 0 && itemCount}</p>
-          <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
-      
-          {/* {hiddenMenu ? <ShoppingCartContainer
-          hiddenMenu={hiddenMenu}
-          cartItems={cartItems}
-          itemCount={itemCount}
-          removeItem={removeItem}
-          totalPrice={totalPrice} /> : ''} */}
-  
-
+      {showMobileMenu ? (
+        <div className="mobileMenu">
+          <MenuList />
         </div>
-        <div id="ShoppingCartMenu">
+      ) : (
+        <div />
+      )}
+
+      <div className="Sidebar">  
+        <MenuList />
+      </div>  
+      <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+        <p>{itemCount > 0 && itemCount}</p>
+        <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"}></i>
+       <div id="ShoppingCartMenu">
         {hiddenMenu ? <ShoppingCartContainer
           hiddenMenu={hiddenMenu}
           cartItems={cartItems}
           itemCount={itemCount}
           removeItem={removeItem}
           totalPrice={totalPrice} /> : ""} 
-
+      </div>
       <BaseMain
         headerContent={
           <div id="headerContentContainer">
-
             <h1 id="pageTitle">Välkommen till Filmcentralen</h1>
           </div>
         }
@@ -69,10 +79,20 @@ const Home = (props) => {
           </div>
         }
       />
-  
-    </div>
     </div>
   );
 };
+
+const MenuList = () => {
+  return (
+    <div>
+      <MenuItem
+      title="Hem"
+      image={require("../assets/home.png")}
+      navigatesTo=""
+      />
+    </div>
+  )
+}
 
 export default Home;
