@@ -11,7 +11,6 @@ import FeedbackForm from "../FeedbackForm";
 import Home from "../../pages/home";
 
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
-  
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [hiddenMenu, setHiddenMenu] = useState(false);
   const [itemCount, setItemCount] = useState(0);
@@ -89,7 +88,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
 
 {/* Allt som ska vara på sidan som inte är sidebar, meny eller shoppingcart ska vara här */}
       <div className="header-and-main-content-container">
-        <div className="margin">
+        {/* <div className="margin"> */}
           <div className="headContent">
             <Search />
           </div>
@@ -98,8 +97,8 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             <Home />
         </div> 
         
-        <div className="footerContent">{footerContent}</div>
-        </div>
+        <div className="footerContent"></div>
+        {/* </div> */}
       </div>
      
     </div>

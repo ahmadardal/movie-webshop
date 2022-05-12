@@ -30,7 +30,6 @@ const Home = (props) => {
 
   return (
     <div className="homeBaseContainer">
-        <h1>{value}</h1>
         <MovieSlider />
         <Movies />
         {/* <Button btnText={"Hello"} handleClick={btnPress} />

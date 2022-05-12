@@ -29,6 +29,7 @@
 
 .homeBaseContainer {
     display: flex;
+    flex-direction: column;
 }
 
 
