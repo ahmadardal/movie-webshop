@@ -5,7 +5,6 @@ import BaseLayout from "./components/basecomponents/baselayout";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
 import ShoppingCartContainer from "./components/shoppingCart/shoppingCartContainer";
-import SelectedMovie from "./components/SelectedMovie";
 
 const App = () => {
   const [listOfMovies, setListOfMovies] = useState(null);

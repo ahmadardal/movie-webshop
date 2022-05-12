@@ -11,7 +11,8 @@ import ShoppingCartContainer from "../shoppingCart/shoppingCartContainer";
 import FeedbackForm from "../FeedbackForm";
 import Home from "../../pages/home";
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
-import SelectedMovie from "../SelectedMovie";
+import SelectedMovie from "../../pages/SelectedMovie";
+import SearchResults from "../../pages/SearchResults";
 
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -107,6 +108,9 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             <Route path='selectedmovie' element={
               <SelectedMovie />
             } />
+            <Route path='searchresults' element={
+              <SearchResults />
+            } />
 
           </Routes>
         </div>
@@ -135,12 +139,3 @@ const MenuList = () => {
     </div>
   )
 }
-
-/* 
-Flytta sidebar till baselayout                     []
-Se till att CSS hänger med                                []
-Lägg till logga                                           []
-FLytta burgermenu                                         []
-Kolla att CSS stämmer                                     []
-
-*/
