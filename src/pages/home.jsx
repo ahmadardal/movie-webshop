@@ -42,7 +42,7 @@ const Home = (props) => {
   
 
         </div>
-        <div id="SoppingCart">
+        <div id="ShoppingCartMenu">
         {hiddenMenu ? <ShoppingCartContainer
           hiddenMenu={hiddenMenu}
           cartItems={cartItems}
