@@ -20,11 +20,7 @@ const App = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route exact path="/" element={<BaseLayout />} />
-        <Route path="/SelectedMovie" element={
-          <SelectedMovie />} />
-      </Routes>
+      <BaseLayout />
     </Router>
   );
 };

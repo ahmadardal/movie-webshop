@@ -10,6 +10,8 @@ import Logo from "../../assets/webpagelogo.png"
 import ShoppingCartContainer from "../shoppingCart/shoppingCartContainer";
 import FeedbackForm from "../FeedbackForm";
 import Home from "../../pages/home";
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
+import SelectedMovie from "../SelectedMovie";
 
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -17,24 +19,24 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const [itemCount, setItemCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(10);
   const [cartItems, setCardItems] = useState([
-    {movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 10, movieId: 1, cartCount: 2},
-     {movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 20, movieId: 2, cartCount: 3},
-     {movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 30, movieId: 3, cartCount: 5},
-     {movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 50, movieId: 6, cartCount: 7}]);
+    { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 10, movieId: 1, cartCount: 2 },
+    { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 20, movieId: 2, cartCount: 3 },
+    { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 30, movieId: 3, cartCount: 5 },
+    { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 50, movieId: 6, cartCount: 7 }]);
 
-  const updateCart = (movieName,movieId, movieImg, moviePrice) => {
+  const updateCart = (movieName, movieId, movieImg, moviePrice) => {
 
-      setItemCount(prevCount => prevCount + 1)
-      setTotalPrice(prevPrice => prevPrice + moviePrice)
-  
-      if (cartItems.find(item => item.id === movieId)) {
-        const result = cartItems.find(item => item.id === movieId);
-        result.cartCount++;
-        return;
-      }
-      setCardItems([...cartItems,
-      { movieName: movieName,img: movieImg, price: moviePrice, movieId: movieId, cartCount: 1 }
-      ])
+    setItemCount(prevCount => prevCount + 1)
+    setTotalPrice(prevPrice => prevPrice + moviePrice)
+
+    if (cartItems.find(item => item.id === movieId)) {
+      const result = cartItems.find(item => item.id === movieId);
+      result.cartCount++;
+      return;
+    }
+    setCardItems([...cartItems,
+    { movieName: movieName, img: movieImg, price: moviePrice, movieId: movieId, cartCount: 1 }
+    ])
   }
 
   const removeItem = (movieId) => {
@@ -55,13 +57,13 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
 
   return (
     <div className="base-layout-all-content-container">
-      <img 
+      <img
         src={BurgerMenyIcon}
         id="burgerMenyIcon"
         alt="Menu"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
-      /> 
-      
+      />
+
       {showMobileMenu ? (
         <div className="mobileMenu">
           <MenuList />
@@ -79,30 +81,40 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             cartItems={cartItems}
             itemCount={itemCount}
             removeItem={removeItem}
-            totalPrice={totalPrice} /> : ""} 
+            totalPrice={totalPrice} /> : ""}
         </div>
       </div>
 
-      <div className="Sidebar">  
+      <div className="Sidebar">
         <MenuList />
-      </div> 
+      </div>
 
-{/* Allt som ska vara på sidan som inte är sidebar, meny eller shoppingcart ska vara här */}
+      {/* Allt som ska vara på sidan som inte är sidebar, meny eller shoppingcart ska vara här */}
       <div className="header-and-main-content-container">
+
         {/* <div className="margin"> */}
-          <div className="headContent">
-            <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
-            <Search />
-          </div>
+        <div className="headContent">
+          <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
+          <Search />
+        </div>
+
         {/* Här kommer komponenterna vi byter ut vara */}
         <div className="mainContent" style={{ marginTop: 30 }}>
-            <Home />
-        </div> 
-        
+          <Routes>
+            <Route exact path='/' element= {
+              <Home />
+            } />
+            <Route path='selectedmovie' element={
+              <SelectedMovie />
+            } />
+
+          </Routes>
+        </div>
+
         <div className="footerContent"></div>
         {/* </div> */}
       </div>
-     
+
     </div>
   );
 };
@@ -116,9 +128,9 @@ const MenuList = () => {
   return (
     <div>
       <MenuItem
-      title="Hem"
-      image={require("../../assets/home.png")}
-      navigatesTo=""
+        title="Hem"
+        image={require("../../assets/home.png")}
+        navigatesTo=""
       />
     </div>
   )
