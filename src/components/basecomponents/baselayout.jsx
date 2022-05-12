@@ -6,6 +6,7 @@ import Movies from "../movies";
 import MovieCard from "../MovieCard";
 import MovieSlider from "../movieslider";
 import BurgerMenyIcon from "../../assets/hamburger.png"
+import Logo from "../../assets/webpagelogo.png"
 import ShoppingCartContainer from "../shoppingCart/shoppingCartContainer";
 import FeedbackForm from "../FeedbackForm";
 import Home from "../../pages/home";
@@ -90,6 +91,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
       <div className="header-and-main-content-container">
         {/* <div className="margin"> */}
           <div className="headContent">
+            <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
             <Search />
           </div>
         {/* Här kommer komponenterna vi byter ut vara */}

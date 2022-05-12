@@ -7,12 +7,16 @@
   overflow: hidden;
 } 
 
-  #pageTitle {
+.webpage-logo-image {
+  width: 400px;
+}
+
+#pageTitle {
     font-size: 30pt;
     color: orange;
     display: inline-block;
 
-  }
+}
 
   .header-and-main-content-container {
     display: flex;
@@ -59,7 +63,7 @@
     /* background-color: green; */
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   .mainContent {
