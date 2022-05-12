@@ -1,13 +1,11 @@
 
-.baseMainContentContainer {
+.base-layout-all-content-container {
   height: 100vh;
   width: 100vw;
   background-color: #f8f8f8;
   display: flex;
   overflow: hidden;
 } 
-
-
 
   #pageTitle {
     font-size: 30pt;
@@ -16,7 +14,7 @@
 
   }
 
-  .contentContainer {
+  .header-and-main-content-container {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -27,6 +25,31 @@
   .margin {
     margin-left: 3vw;
     margin-right: 3vw;
+  }
+
+  #burgerMenyIcon {
+    width: 30px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    display: none;
+  }
+
+  .Sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    -webkit-app-region: drag;
+    align-self: flex-start;
+    /* width: 130px; */
+    height: 100vh;
+    z-index: 2;
+    /* background: transparent; */
+    background: #ffffff;
+    border-right: 0.2px solid #abababba;
+    padding: 20px;
+    filter: drop-shadow(1px 1px 0.5px rgba(103, 100, 100, 0.25));
   }
 
   .headContent {
@@ -89,5 +112,4 @@
       margin-left: 0;
       margin-right: 0;
     }
-
   }
