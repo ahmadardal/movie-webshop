@@ -27,14 +27,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <div id="deneme">
-        {hiddenMenu ? <ShoppingCartContainer
-          hiddenMenu={hiddenMenu}
-          cartItems={cartItems}
-          itemCount={itemCount}
-          removeItem={removeItem}
-          totalPrice={totalPrice} /> : ''}
-      </div>
+
         <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
           <p>{itemCount > 0 && itemCount}</p>
           <i className={hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"} ></i>
@@ -48,7 +41,13 @@ const Home = (props) => {
   
 
         </div>
-
+        <div id="deneme">
+        {hiddenMenu ? <ShoppingCartContainer
+          hiddenMenu={hiddenMenu}
+          cartItems={cartItems}
+          itemCount={itemCount}
+          removeItem={removeItem}
+          totalPrice={totalPrice} /> : ""} 
 
       <BaseMain
         headerContent={
@@ -69,7 +68,8 @@ const Home = (props) => {
           </div>
         }
       />
-
+  
+    </div>
     </div>
   );
 };
