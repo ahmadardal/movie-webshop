@@ -1,7 +1,7 @@
 import "../styles/SelectedMovie.css";
-import StarRating from "./reusableComponents/starrating";
-import FeedbackCard from "./FeedbackCard";
-import FeedbackForm from "./FeedbackForm";
+import StarRating from "../components/reusableComponents/starrating";
+import FeedbackCard from "../components/FeedbackCard";
+import FeedbackForm from "../components/FeedbackForm";
 // import { db } from "../firebase-config";
 // import { collection, getDocs, addDoc } from "firebase/firestore";
 

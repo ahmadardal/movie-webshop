@@ -11,10 +11,14 @@ import ShoppingCartContainer from "../shoppingCart/shoppingCartContainer";
 import FeedbackForm from "../FeedbackForm";
 import Home from "../../pages/home";
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
-import SelectedMovie from "../SelectedMovie";
+import SelectedMovie from "../../pages/SelectedMovie";
+import SearchResults from "../../pages/SearchResults";
 
+// This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
   const [itemCount, setItemCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(10);
@@ -23,6 +27,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
     { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 20, movieId: 2, cartCount: 3 },
     { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 30, movieId: 3, cartCount: 5 },
     { movieName: "Batman", img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo', price: 50, movieId: 6, cartCount: 7 }]);
+
 
   const updateCart = (movieName, movieId, movieImg, moviePrice) => {
 
@@ -89,7 +94,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         <MenuList />
       </div>
 
-      {/* Allt som ska vara på sidan som inte är sidebar, meny eller shoppingcart ska vara här */}
+      {/* Everything on the page that is NOT menu, sidebar or shoppingcart goes here */}
       <div className="header-and-main-content-container">
 
         {/* <div className="margin"> */}
@@ -98,7 +103,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
           <Search />
         </div>
 
-        {/* Här kommer komponenterna vi byter ut vara */}
+        {/* Here are all the replaceble components */}
         <div className="mainContent" style={{ marginTop: 30 }}>
           <Routes>
             <Route exact path='/' element= {
@@ -106,6 +111,9 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             } />
             <Route path='selectedmovie' element={
               <SelectedMovie />
+            } />
+            <Route path='searchresults' element={
+              <SearchResults />
             } />
 
           </Routes>
@@ -135,12 +143,3 @@ const MenuList = () => {
     </div>
   )
 }
-
-/* 
-Flytta sidebar till baselayout                     []
-Se till att CSS hänger med                                []
-Lägg till logga                                           []
-FLytta burgermenu                                         []
-Kolla att CSS stämmer                                     []
-
-*/
