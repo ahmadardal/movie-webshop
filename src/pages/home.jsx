@@ -30,7 +30,7 @@ const Home = (props) => {
 
   return (
     <div className="homeBaseContainer">
-        <MovieSlider />
+        {/* <MovieSlider /> */}
         <Movies />
         {/* <Button btnText={"Hello"} handleClick={btnPress} />
         <FeedbackCard feedback="Hej" author="Ahmad Ardal" age="18" />

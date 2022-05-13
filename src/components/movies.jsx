@@ -25,10 +25,9 @@ const Movies = () => {
   if (tempMovies != null) {
     listOfMovies = tempMovies.results.map((movie) => (
       <div key={movie.id} className="moviesMovieContainer">
-        <Link to={"/selectedmovie"}>
+        <Link to={"/selectedmovie"} state={{ movie: movie}}>
           <MovieCard
-            title={movie.title}
-            img={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+            movie={movie}
           />
         </Link>
       </div>

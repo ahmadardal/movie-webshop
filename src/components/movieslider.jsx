@@ -43,6 +43,8 @@ const movieSlider = () => {
 },
   ];
 
+  const movie = ''; // Gör en map av slides i return delen och skicka in en movie
+
   const slideLeft = () => {
       var slider = document.getElementById("slider");
       slider.scrollLeft = slider.scrollLeft - 500;
@@ -73,7 +75,7 @@ const movieSlider = () => {
             <Link to="/SelectedMovie">          
             <div className="slider-card" key={index}>            
 
-            <MovieCard img={require("../assets/batman.png")} title="The Batman"/>
+            <MovieCard movie={slide}/>
 
             </div>
             </Link> 
