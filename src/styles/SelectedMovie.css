@@ -15,6 +15,7 @@
     display: flex;
     margin-left: 30px;  
     margin-right: 30px;
+    margin-bottom: 10px;
     align-items: baseline;
     justify-content: space-between;
 }
@@ -87,10 +88,40 @@
     border: 1px solid gray;
     background-color: rgb(114, 156, 94, 0.6);
     min-height: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .title-rating {
     display: flex;
     flex-direction: column;
    
+}
+
+@media (max-width: 600px) {
+    .selected-movie-info {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .selected-movie-title {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .price button {
+        font-weight: 100;
+        padding: 12px;
+    }
+
+    .feedback-div {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .feedback-info {
+        padding-left: 0%;
+    }
 }

@@ -39,11 +39,11 @@ const SelectedMovie = () => {
       <div className="background-info-container">
         <div className="selected-movie-info">
           <div className="title-rating">
-            <h1>{movie.title}</h1>
+            <h1 className="selected-movie-title">{movie.title}</h1>
             <StarRating movieRating={movie.vote_average} size={"medium-star-rating"} />
           </div>
           <div className="price">
-            <h1>Pris 47 kr</h1>
+            <h1 className="selected-movie-title">Pris 47 kr</h1>
             <button>Lägg till</button>
           </div>
         </div>

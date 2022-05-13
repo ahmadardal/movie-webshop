@@ -9,6 +9,7 @@
 
 .webpage-logo-image {
   width: 400px;
+  margin-bottom: 20px;
 }
 
 #pageTitle {
@@ -89,6 +90,7 @@
     .webpage-logo-image {
       width: 200px;
       margin-bottom: 10px;
+      margin-top: 3px;
     }
 
     #burgerMenyIcon {

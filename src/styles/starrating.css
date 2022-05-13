@@ -12,8 +12,12 @@
 #medium-star-rating {
 font-size: 1.5em;
 }
+
 #medium-star-rating p {
   font-size: 1em;
+  margin-right: 6px;
+  margin-top: 0;
+  margin-bottom: 0%;
   color: black;
 }
 
@@ -21,6 +25,7 @@ font-size: 1.5em;
   display: flex;
   align-items: center;
 }
+
 .star-rating div {
    /*  width: 40px; */
   }
@@ -43,5 +48,11 @@ font-size: 1.5em;
     
   }
 
+  @media (max-width: 600px) {
+
+    #medium-star-rating p {
+      font-size: 0.7em;
+    }
+  }
 
   
