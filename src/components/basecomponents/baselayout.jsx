@@ -70,7 +70,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
       />
 
       {showMobileMenu ? (
-        <div className="mobileMenu">
+        <div className="mobileMenu" onClick={() => setShowMobileMenu(!showMobileMenu)}>
           <MenuList />
         </div>
       ) : (
