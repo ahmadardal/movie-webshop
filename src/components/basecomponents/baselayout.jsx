@@ -2,7 +2,7 @@ import "../../styles/BaseComponent.css";
 import { useState } from "react";
 import MenuItem from "./menuitem";
 import Search from "../search";
-import Movies from "../movies";
+import Movies from "../../pages/movies";
 import MovieCard from "../MovieCard";
 import MovieSlider from "../movieslider";
 import BurgerMenyIcon from "../../assets/hamburger.png"

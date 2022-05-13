@@ -6,7 +6,7 @@ import FeedbackForm from "../components/FeedbackForm";
 import Button from "../components/reusableComponents/button";
 import { actions } from "../state/reducers/counterReducer.js";
 
-import Movies from "../components/movies";
+import Movies from "./movies";
 import MovieCard from "../components/MovieCard";
 import MovieSlider from "../components/movieslider";
 import BurgerMenyIcon from "../assets/hamburger.png"
