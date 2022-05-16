@@ -1,25 +1,27 @@
-
+import { useEffect } from "react";
 import image from '../../assets/batman.png'
 
 
 
-const ShoppingCart = ({ cartItems, removeItem }) => {
+const ShoppingCart = ({ movie, removeItem }) => {
+
+    useEffect(() => {
+        console.log('Individual movie: ', movie);
+      }, []);
 
 return (
     <div className="shoppingCart">
-        {cartItems.map(item => (
-            <div key={item.id} className="cardRow">
+            <div key={movie.movie.id} className="cardRow">
                 <div className="cardImg">
-                    <h3>{item.movieName}</h3>
-                    <p>x {item.cartCount}</p>
-                    <img src={item.img} alt='movie' />
+                    <h3>{movie.movie.title}</h3>
+                    <p>x {movie.count}</p>
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.movie.poster_path}`} alt='movie' />
                 </div>
                 <div className="cardPrice">
-                    <p>{item.price} kr</p>
-                    <i onClick={() => removeItem(item.movieId)} className="fas fa-times"></i>
+                    <p>{movie.price} kr</p>
+                    <i onClick={() => removeItem(movie.movie.id)} className="fas fa-times"></i>
                 </div>
             </div>
-        ))}
     </div>
 )
 }
