@@ -1,5 +1,7 @@
 import "../styles/SelectedMovie.css";
 import { useLocation } from "react-router-dom";
+import { actions } from "../state/reducers/cartReducer.js";
+import { useDispatch, useSelector } from "react-redux";
 import StarRating from "../components/reusableComponents/starrating";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
@@ -8,7 +10,12 @@ import FeedbackForm from "../components/FeedbackForm";
 
 const SelectedMovie = () => {
   const { movie } = useLocation().state;
+  const dispatch = useDispatch();
 
+  const addToCart = () => {
+    // console.log(movie);
+    dispatch(actions.addToCart(movie));
+  };
   // const FeedbackForm = ({ id }) => {
   //     const [comment, SetComment] = useState("");
   //     const [comments, setComments] = useState([]);
@@ -39,12 +46,15 @@ const SelectedMovie = () => {
       <div className="background-info-container">
         <div className="selected-movie-info">
           <div className="title-rating">
-            <h1>{movie.title}</h1>
-            <StarRating movieRating={movie.vote_average} size={"medium-star-rating"} />
+            <h1 className="selected-movie-title">{movie.title}</h1>
+            <StarRating
+              movieRating={movie.vote_average}
+              size={"medium-star-rating"}
+            />
           </div>
           <div className="price">
-            <h1>Pris 47 kr</h1>
-            <button>Lägg till</button>
+            <h1 className="selected-movie-title">Pris 47 kr</h1>
+            <button onClick={addToCart}>Lägg till</button>
           </div>
         </div>
         <div className="movie-info">

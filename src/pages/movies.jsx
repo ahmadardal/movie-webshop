@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StarRating from "./reusableComponents/starrating";
+import StarRating from "../components/reusableComponents/starrating";
 import GetMovieData from "../components/GetMovieData";
 import MovieCard from "../components/MovieCard";
 import "../../src/styles/Movies.css";
