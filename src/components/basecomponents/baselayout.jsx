@@ -17,6 +17,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const value = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [searchTitle, setSearchTitle] = useState('Dodo');
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
@@ -147,7 +148,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         {/* <div className="margin"> */}
         <div className="headContent">
           <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
-          <Search />
+          <Search setSearchTitle={setSearchTitle} />
         </div>
 
         {/* Here are all the replaceble components */}
@@ -155,7 +156,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="selectedmovie" element={<SelectedMovie />} />
-            <Route path="searchresults" element={<SearchResults />} />
+            <Route path="searchresults" element={<SearchResults title={searchTitle}/>} />
           </Routes>
         </div>
 
