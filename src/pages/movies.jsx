@@ -13,7 +13,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchData = async () => {
       const moviesApi =
-        "https://api.themoviedb.org/3/search/movie?api_key=357fd9dbde100c5f47082ae6a7f86d8b&query=batman";
+        "https://api.themoviedb.org/3/discover/movie?api_key=357fd9dbde100c5f47082ae6a7f86d8b&sort_by=popularity.desc";
       const respons = await fetch(moviesApi);
       const data = await respons.json();
       setTempMovies(data);
