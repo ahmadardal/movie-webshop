@@ -14,10 +14,7 @@ const ShoppingCartContainer = (props, { addMovie, removeMovie }) => {
   }, []);
 
   const addToCart = (movie) => dispatch(actions.addToCart(movie));
-  const removeFromCart = (movieId) => {
-      console.log('Removing', movieId)
-    dispatch(actions.removeFromCart(movieId));
-  };
+  const removeFromCart = (movieId) => { dispatch(actions.removeFromCart(movieId)); };
   return (
     <div className="shoppingCartContainer">
       {movies.map((movie) => {
@@ -30,7 +27,3 @@ const ShoppingCartContainer = (props, { addMovie, removeMovie }) => {
 };
 
 export default ShoppingCartContainer;
-
-// {`shoppingCartContainer ${!hiddenMenu ? "" : "hidden"}`}
-
-// <div className={`shoppingCartContainer ${!hiddenMenu ? "" : "hidden"}`}>

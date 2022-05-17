@@ -5,12 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import StarRating from "../components/reusableComponents/starrating";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
+import { useState } from "react";
 // import { db } from "../firebase-config";
 // import { collection, getDocs, addDoc } from "firebase/firestore";
 
 const SelectedMovie = () => {
   const { movie } = useLocation().state;
   const dispatch = useDispatch();
+
+  const [feedbackhidden, setFeedbackhidden] = useState(true) 
 
   const addToCart = () => {
     // console.log(movie);
@@ -62,11 +65,11 @@ const SelectedMovie = () => {
         </div>
         <div className="feedback-div">
           <div className="movie-feedback">
-            <FeedbackForm />
+            {feedbackhidden ? <button style={{width:200}} onClick={() => {setFeedbackhidden(false)}}>Lämna en recension</button> : <FeedbackForm movieId ={movie.id} setFeedbackhidden={setFeedbackhidden}/> }
           </div>
           <div className="feedback-info">
             <h1>Recensioner</h1>
-            <FeedbackCard className="FeedbackCard" />
+            <FeedbackCard className="FeedbackCard"  movieId = {movie.id}/>
           </div>
         </div>
       </div>
