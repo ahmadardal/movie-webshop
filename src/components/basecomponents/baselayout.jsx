@@ -11,13 +11,14 @@ import SelectedMovie from "../../pages/SelectedMovie";
 import SearchResults from "../../pages/SearchResults";
 import { actions } from "../../state/reducers/counterReducer.js";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const value = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [searchTitle, setSearchTitle] = useState('Dodo');
+  const [searchTitle, setSearchTitle] = useState('');
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
@@ -147,7 +148,9 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
       <div className="header-and-main-content-container">
         {/* <div className="margin"> */}
         <div className="headContent">
+          <Link to={"/"}>
           <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
+          </Link>
           <Search setSearchTitle={setSearchTitle} />
         </div>
 

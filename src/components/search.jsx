@@ -5,19 +5,20 @@ import GetMovieData from "./GetMovieData";
 import { Link } from "react-router-dom";
 
 /* 
-Gör button till en länk till searchResult           []
-Skicka med titel                                    []
+Gör button till en länk till searchResult           [x]
+Skicka med titel                                    [x]
+Nollställ input                                     []
  */
 
 const Search = ({setSearchTitle}) => {
 
     const [input, setInput] = useState('');
 
-    /* function setTitleAndResetInput() {
+    function setTitleAndResetInput() {
         setSearchTitle(input);
         setInput('');
         console.log('jag körs alltså finns jag');
-    } */
+    }
 
     return (
         <form>
@@ -30,7 +31,7 @@ const Search = ({setSearchTitle}) => {
                 <label>Type a movie name :</label>
             </div>
             <Link to={"/searchresults"}>
-            <button>Search</button>
+            <button onClick={setTitleAndResetInput}>Search</button>
             </Link>
         </form>
     )

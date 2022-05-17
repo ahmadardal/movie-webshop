@@ -1,32 +1,54 @@
 import MovieCard from "../components/MovieCard";
 import "../styles/SearchResults.css";
 import GetMovieData from "../components/GetMovieData";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 /* 
-Skapa funktion som kallar på getmoviedata   (useEffect) []
-Få tillbaka en lista som du loggar                      []
-Gör en map om listan inte är tom                        []
+Skapa funktion som kallar på getmoviedata   (useEffect) [x]
+Få tillbaka en lista som du loggar                      [x]
+Gör en map om listan inte är tom                        [x]
+Varför laddas searchresult så mycket?                   []
+Kom på hur du ska kunna uppdatera sidan                 []
+Fixa så det står "inga träffar" om filmen inte finns    []
 
 */
 
 const SearchResults = ({title}) => {
 
-let content = null;
+    const [searchResults, setSearchResults] = useState(null);
+    let content = null;
 
-/* if(searchReults != null) {
-    content = searchReults.map((movie) => (
+    useEffect(() => {
+
+        const fetchSearchData = async () => {
+            console.log('Search Results fetching!')
+            const tempList = await GetMovieData(title);
+            setSearchResults(tempList);
+            
+        }
+
+        fetchSearchData()
+    }, []);
+
+    useEffect(() => {
+        console.log('searchResults laddas');
+    });
+
+    if(searchResults != null) {
+        console.log('Searchresults not empty:', searchResults);
+    content = searchResults.results.map((movie) => (
         <div key={movie.id} className="search-result-container">
+            <Link to={"/selectedmovie"} state={{ movie: movie}}>
             <MovieCard
             movie={movie}
             />
+            </Link>
         </div>
     ));
-} */
+    } 
     return (
         <div className="search-results-container">
-            Här kommer alla sökresultat vara
-            <h1>{title}</h1>
             {content}
         </div>
     );
