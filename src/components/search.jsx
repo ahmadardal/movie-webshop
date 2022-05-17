@@ -12,7 +12,7 @@ const Search = () => {
                 // value={search}
                 // onChange={e => setSearch(e.target.value)}
                  />
-                <label>Type a movie name :</label>
+                <label>Movie name:</label>
             </div>
             <Button btnText={"Search"} />
         </form>
