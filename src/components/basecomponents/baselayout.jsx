@@ -6,96 +6,23 @@ import BurgerMenyIcon from "../../assets/hamburger.png";
 import Logo from "../../assets/webpagelogo.png";
 import ShoppingCartContainer from "../shoppingCart/shoppingCartContainer";
 import Home from "../../pages/home";
+import Drama from "../../pages/drama";
+import Horror from "../../pages/horror";
+import Comedy from "../../pages/comedy";
+import Action from "../../pages/action";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import SelectedMovie from "../../pages/SelectedMovie";
 import SearchResults from "../../pages/SearchResults";
-import { actions } from "../../state/reducers/counterReducer.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const totalPrice = useSelector((state) => state.cart.total);
   const itemCount = useSelector((state) => state.cart.count);
-  const dispatch = useDispatch();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
-  // const [itemCount, setItemCount] = useState(0);
-  const [cartItems, setCardItems] = useState([
-    {
-      movieName: "Batman",
-      img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo",
-      price: 10,
-      movieId: 1,
-      cartCount: 2,
-    },
-    {
-      movieName: "Batman",
-      img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo",
-      price: 20,
-      movieId: 2,
-      cartCount: 3,
-    },
-    {
-      movieName: "Batman",
-      img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo",
-      price: 30,
-      movieId: 3,
-      cartCount: 5,
-    },
-    {
-      movieName: "Batman",
-      img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRBkxgl2A2PhE_6tklFLT0bxn5NLhvhsnpXGhmXBt_zotrlVHmo",
-      price: 50,
-      movieId: 6,
-      cartCount: 7,
-    },
-  ]);
-
-  // const updateCart = (movieName, movieId, movieImg, moviePrice) => {
-  //   setItemCount((prevCount) => prevCount + 1);
-  //   setTotalPrice((prevPrice) => prevPrice + moviePrice);
-
-  //   if (cartItems.find((item) => item.id === movieId)) {
-  //     const result = cartItems.find((item) => item.id === movieId);
-  //     result.cartCount++;
-  //     return;
-  //   }
-  //   setCardItems([
-  //     ...cartItems,
-  //     {
-  //       movieName: movieName,
-  //       img: movieImg,
-  //       price: moviePrice,
-  //       movieId: movieId,
-  //       cartCount: 1,
-  //     },
-  //   ]);
-  // };
-
-  // const removeItem = (movieId) => {
-  //   const newItem = cartItems.filter(
-  //     (cartItem) => cartItem.movieId !== movieId
-  //   );
-  //   setCardItems(newItem);
-
-  //   const itemCountResult = newItem.reduce(
-  //     (acc, val) => (acc += val.cartCount),
-  //     0
-  //   );
-  //   setItemCount(itemCountResult);
-
-  //   const priceResult = newItem.reduce(
-  //     (acc, val) => (acc += val.price * val.cartCount),
-  //     0
-  //   );
-
-  //   setTotalPrice(priceResult);
-  // };
-
-
-  const addToCart = (movie) => dispatch(actions.addToCart(movie));
 
   return (
     <div className="base-layout-all-content-container">
@@ -128,9 +55,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
           {hiddenMenu ? (
             <ShoppingCartContainer
               hiddenMenu={hiddenMenu}
-              cartItems={cartItems}
               itemCount={itemCount}
-              // removeItem={removeItem}
               totalPrice={totalPrice}
             />
           ) : (
@@ -155,6 +80,10 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         <div className="mainContent" style={{ marginTop: 30 }}>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/action" element={<Action />} />
+            <Route exact path="/drama" element={<Drama />} />
+            <Route exact path="/horror" element={<Horror />} />
+            <Route exact path="/comedy" element={<Comedy />} />
             <Route path="selectedmovie" element={<SelectedMovie />} />
             <Route path="searchresults" element={<SearchResults />} />
           </Routes>
@@ -173,9 +102,29 @@ const MenuList = () => {
   return (
     <div>
       <MenuItem
-        title="Hem"
-        image={require("../../assets/home.png")}
+        title="Upptäck"
+        image={require("../../assets/tv-show.png")}
         navigatesTo=""
+      />
+      <MenuItem
+        title="Drama"
+        image={require("../../assets/detective.png")}
+        navigatesTo="drama"
+      />
+      <MenuItem
+        title="Horror"
+        image={require("../../assets/pumpkin.png")}
+        navigatesTo="horror"
+      />
+      <MenuItem
+        title="Action"
+        image={require("../../assets/guns.png")}
+        navigatesTo="action"
+      />
+      <MenuItem
+        title="Comedy"
+        image={require("../../assets/theatre.png")}
+        navigatesTo="comedy"
       />
     </div>
   );
