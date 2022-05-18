@@ -65,7 +65,7 @@ const SelectedMovie = () => {
         </div>
         <div className="feedback-div">
           <div className="movie-feedback">
-            {feedbackhidden ? <button style={{width:200}} onClick={() => {setFeedbackhidden(false)}}>Lämna en recension</button> : <FeedbackForm movieId ={movie.id} setFeedbackhidden={setFeedbackhidden}/> }
+            {feedbackhidden ? <button style={{width:200}} onClick={() => {setFeedbackhidden(false)}}>Lämna en recension</button> : <FeedbackForm movieId ={movie.id} feedbackhidden={feedbackhidden} setFeedbackhidden={setFeedbackhidden}/> }
           </div>
           <div className="feedback-info">
             <h1>Recensioner</h1>
