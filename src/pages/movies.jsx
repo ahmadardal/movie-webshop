@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import StarRating from "./reusableComponents/starrating";
+import StarRating from "../components/reusableComponents/starrating";
 import GetMovieData from "../components/GetMovieData";
 import MovieCard from "../components/MovieCard";
 import "../../src/styles/Movies.css";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [tempMovies, setTempMovies] = useState(null);
@@ -24,10 +25,11 @@ const Movies = () => {
   if (tempMovies != null) {
     listOfMovies = tempMovies.results.map((movie) => (
       <div key={movie.id} className="moviesMovieContainer">
-        <MovieCard
-          title={movie.title}
-          img={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-        />
+        <Link to={"/selectedmovie"} state={{ movie: movie}}>
+          <MovieCard
+            movie={movie}
+          />
+        </Link>
       </div>
     ));
   }

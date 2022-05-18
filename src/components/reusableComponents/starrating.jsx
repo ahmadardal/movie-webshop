@@ -12,7 +12,7 @@ const StarRating = ({movieRating, size}) => {
     
     return (
       <div className="star-rating" id={size}>
-          <p>{rating}</p>
+          <p>{starRating}</p>
         {[...Array(5)].map((star, index) => {
           index += 1;
           return (

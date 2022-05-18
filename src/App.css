@@ -38,6 +38,8 @@ form {
 form .searchFormContainer {
   height: 38px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 form .searchFormContainer input,
@@ -62,7 +64,7 @@ form .searchFormContainer input:focus {
 form .searchFormContainer input:valid + label,
 form .searchFormContainer input:focus + label {
   color: #353b80;
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 600;
   transform: translateY(-24px);
 }
@@ -109,5 +111,34 @@ button {
 
   #headerContentContainer {
     display: flex;
+  }
+
+  form .searchFormContainer input {
+    padding: 0 10px;
+    width: 150px;
+  }
+
+  form {
+    /* margin:0; */
+   /*  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    align-self: center; */
+  }
+
+  .btn {
+    height: 38px;
+    font-size: 0.7em;
+    font-weight: 300;
+    width: 60px;
+  }
+  
+
+  form .searchFormContainer input:valid + label,
+  form .searchFormContainer input:focus + label {
+  font-size: 0px;
+  font-weight: 0;
+  
   }
 }
