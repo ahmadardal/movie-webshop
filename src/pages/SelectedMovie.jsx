@@ -56,7 +56,7 @@ const SelectedMovie = () => {
             />
           </div>
           <div className="price">
-            <h1 className="selected-movie-title">Pris 47 kr</h1>
+            <h1 className="selected-movie-title">Pris {movie.price} kr</h1>
             <button onClick={addToCart}>Lägg till</button>
           </div>
         </div>
