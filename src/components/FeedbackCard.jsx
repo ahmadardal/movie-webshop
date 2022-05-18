@@ -1,40 +1,24 @@
 import '../styles/FeedbackCard.css';
 import ReactStars from "react-rating-stars-component";
 import { db } from "./firebase-config";
-import { collection, getDocs, onSnapshot, where, query, doc } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, where, query, doc, orderBy } from "firebase/firestore";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { async } from '@firebase/util';
 
 
-function FeedbackCard({ feedback, author, age, movieId }) {
+function FeedbackCard({ movieId }) {
     const collectionRef = collection(db, "comments");
     const [comments, setComments] = useState([]);
 
     const getComments = async () => {
         const q = await query(collectionRef, where("movieId", "==", movieId));
-        const unsubscribe = await onSnapshot(q, (querySnapshot) => {
-
+        await onSnapshot(q, (querySnapshot) => {
             setComments(querySnapshot.docs.map((item) => ({ ...item.data() })))
-
-
         })
     }
 
-
-
-
     useEffect(() => {
         getComments();
-        //  unsubscribe();
-        // const getComments = async () => {
-        //     const data = await getDocs(collectionRef);
-        //     setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-
-        // };
-
-        // getComments();
-        console.log(comments)
     }, []);
 
 

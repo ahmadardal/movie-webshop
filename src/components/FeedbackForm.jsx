@@ -7,7 +7,7 @@ import { db } from "./firebase-config";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
 // kommentar
-const FeedbackForm = ({ movieId, setFeedbackhidden }) => {
+const FeedbackForm = ({ movieId, setFeedbackhidden, feedbackhidden }) => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [rating, setRating] = useState(0);
@@ -39,9 +39,9 @@ const FeedbackForm = ({ movieId, setFeedbackhidden }) => {
         age: age,
         comment: comment,
         rate: rating,
+        date: Date.now()
       })
         .then(() => {
-          alert("Successfully");
           setRating(0)
           setTextName("")
           setComment("")
@@ -108,12 +108,12 @@ const FeedbackForm = ({ movieId, setFeedbackhidden }) => {
           style={{ height: 100, width: 250 }}
         />
       </div>
-      <div className="submitButton">
+      <div style={{}} className="submitButton">
         <button onClick={textName !== "" && comment!=="" && rating !== 0 && saveComments}> Skicka </button> 
        
        <br />
 
-       <button>Cancel</button>
+       <button onClick={() => {setFeedbackhidden(!feedbackhidden)}}>Cancel</button>
       </div>
     </div>
   );
