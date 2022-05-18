@@ -14,14 +14,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
-  const value = useSelector((state) => state.cart);
+  const totalPrice = useSelector((state) => state.cart.total);
+  const itemCount = useSelector((state) => state.cart.count);
   const dispatch = useDispatch();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
-  const [itemCount, setItemCount] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(10);
+  // const [itemCount, setItemCount] = useState(0);
   const [cartItems, setCardItems] = useState([
     {
       movieName: "Batman",
@@ -93,6 +93,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
 
   //   setTotalPrice(priceResult);
   // };
+
 
   const addToCart = (movie) => dispatch(actions.addToCart(movie));
 

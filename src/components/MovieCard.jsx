@@ -9,10 +9,6 @@ const MovieCard = ({ movie }) => {
 
   // const { movie } = useLocation().state;
 
-  const randomPrice = () => {
-    return Math.floor(Math.random() * 6) + 1;
-  };
-
   return (
     <div className="movieCardContainer">
       <img
@@ -26,10 +22,10 @@ const MovieCard = ({ movie }) => {
           <p>{movie.title}</p>
         </div>
         <div className="movieCardLowerInfo">
-          <p>{randomPrice()} kr</p>
+          <p>{movie.price} kr</p>
           {/* <StarRating/> */}
 
-          <StarRating movieRating={2.7} size={'small-star-rating'} />
+          <StarRating movieRating={movie.vote_average} size={'small-star-rating'} />
         </div>
       </div>
     </div>
