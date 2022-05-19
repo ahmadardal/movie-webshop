@@ -6,8 +6,8 @@ const Home = (props) => {
 
   return (
     <div className="homeBaseContainer">
-      {/* Här ska movie slider vara */}
-        <Movies />   
+        <MovieSlider />
+        <Movies />
     </div>
   );
 };
