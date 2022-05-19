@@ -19,6 +19,14 @@
 
 }
 
+.shoppingcart-close-cross {
+  width: 30px;
+  position: absolute;
+  right: 13px;
+  top: 13px;
+}
+
+
   .header-and-main-content-container {
     display: flex;
     flex-direction: column;

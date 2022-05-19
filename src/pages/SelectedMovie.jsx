@@ -6,12 +6,15 @@ import StarRating from "../components/reusableComponents/starrating";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
 import { useState } from "react";
+import noImage from "../assets/noimage.jpg";
 // import { db } from "../firebase-config";
 // import { collection, getDocs, addDoc } from "firebase/firestore";
 
 const SelectedMovie = () => {
   const { movie } = useLocation().state;
   const dispatch = useDispatch();
+
+  let movieImageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : noImage;
 
   const [feedbackhidden, setFeedbackhidden] = useState(true) 
 
@@ -43,7 +46,7 @@ const SelectedMovie = () => {
         <img
           className="background-image-sm"
           alt={movie.title}
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          src={movieImageUrl}
         />
       </div>
       <div className="background-info-container">

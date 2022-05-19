@@ -16,6 +16,7 @@ import SearchResults from "../../pages/SearchResults";
 import { actions } from "../../state/reducers/counterReducer.js";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import CloseShoppingCart from "../../assets/cross.png";
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
@@ -47,9 +48,22 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         <div />
       )}
 
-      <div className="menuWrapper" onClick={() => setHiddenMenu(!hiddenMenu)}>
+      <div className="menuWrapper" >
+        {hiddenMenu ? (
+          <img src={CloseShoppingCart} 
+          className="shoppingcart-close-cross"
+          onClick={() => setHiddenMenu(!hiddenMenu)}
+          />
+        ) : (
+          <div />
+        )
+
+        }
+        
+
         <p>{itemCount > 0 && itemCount}</p>
         <i
+          onClick={() => setHiddenMenu(!hiddenMenu)}
           className={
             hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"
           }
