@@ -13,13 +13,16 @@ import Action from "../../pages/action";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import SelectedMovie from "../../pages/SelectedMovie";
 import SearchResults from "../../pages/SearchResults";
-import { useSelector } from "react-redux";
+import { actions } from "../../state/reducers/counterReducer.js";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const totalPrice = useSelector((state) => state.cart.total);
   const itemCount = useSelector((state) => state.cart.count);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [searchTitle, setSearchTitle] = useState('');
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
@@ -72,8 +75,10 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
       <div className="header-and-main-content-container">
         {/* <div className="margin"> */}
         <div className="headContent">
+          <Link to={"/"}>
           <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
-          <Search />
+          </Link>
+          <Search setSearchTitle={setSearchTitle} />
         </div>
 
         {/* Here are all the replaceble components */}
@@ -85,7 +90,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             <Route exact path="/horror" element={<Horror />} />
             <Route exact path="/comedy" element={<Comedy />} />
             <Route path="selectedmovie" element={<SelectedMovie />} />
-            <Route path="searchresults" element={<SearchResults />} />
+            <Route path="searchresults" element={<SearchResults title={searchTitle}/>} />
           </Routes>
         </div>
 
