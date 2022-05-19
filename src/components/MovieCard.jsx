@@ -8,6 +8,7 @@ import noImage from "../assets/noimage.jpg";
 
 const MovieCard = ({ movie }) => {
 
+  let movieImageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : noImage;
  
 
   return (
@@ -15,7 +16,7 @@ const MovieCard = ({ movie }) => {
       <img
         className="movieCardImage"
         alt={movie.title}
-        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+        src={movieImageUrl}
       />
 
       <div className="movieCardInfoContent">
