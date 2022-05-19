@@ -46,7 +46,7 @@ const SelectedMovie = () => {
         <img
           className="background-image-sm"
           alt={movie.title}
-          src={noImage}
+          src={movieImageUrl}
         />
       </div>
       <div className="background-info-container">
