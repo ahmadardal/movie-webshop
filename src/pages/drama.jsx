@@ -2,16 +2,15 @@ import Movies from "./movies";
 import "../styles/Home.css"
 
 
-const Home = (props) => {
+const Drama = (props) => {
 
   return (
     <div className="homeBaseContainer">
-        <MovieSlider />
-        <Movies />
+        <Movies category={'drama'}/>   
     </div>
   );
 };
 
 
 
-export default Home;
+export default Drama;

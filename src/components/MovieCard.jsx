@@ -1,5 +1,6 @@
 import "../styles/MovieCard.css";
 import StarRating from "./reusableComponents/starrating";
+import noImage from "../assets/noimage.jpg";
 
 // TODO LIST
 // Förbättra randomPrice funktion
@@ -7,18 +8,15 @@ import StarRating from "./reusableComponents/starrating";
 
 const MovieCard = ({ movie }) => {
 
-  // const { movie } = useLocation().state;
-
-  const randomPrice = () => {
-    return Math.floor(Math.random() * 6) + 1;
-  };
+  let movieImageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : noImage;
+ 
 
   return (
     <div className="movieCardContainer">
       <img
         className="movieCardImage"
         alt={movie.title}
-        src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+        src={movieImageUrl}
       />
 
       <div className="movieCardInfoContent">
@@ -26,10 +24,10 @@ const MovieCard = ({ movie }) => {
           <p>{movie.title}</p>
         </div>
         <div className="movieCardLowerInfo">
-          <p>{randomPrice()} kr</p>
+          <p>{movie.price} kr</p>
           {/* <StarRating/> */}
 
-          <StarRating movieRating={2.7} size={'small-star-rating'} />
+          <StarRating movieRating={movie.vote_average} size={'small-star-rating'} />
         </div>
       </div>
     </div>

@@ -6,12 +6,15 @@ import StarRating from "../components/reusableComponents/starrating";
 import FeedbackCard from "../components/FeedbackCard";
 import FeedbackForm from "../components/FeedbackForm";
 import { useState } from "react";
+import noImage from "../assets/noimage.jpg";
 // import { db } from "../firebase-config";
 // import { collection, getDocs, addDoc } from "firebase/firestore";
 
 const SelectedMovie = () => {
   const { movie } = useLocation().state;
   const dispatch = useDispatch();
+
+  let movieImageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : noImage;
 
   const [feedbackhidden, setFeedbackhidden] = useState(true) 
 
@@ -43,7 +46,7 @@ const SelectedMovie = () => {
         <img
           className="background-image-sm"
           alt={movie.title}
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          src={movieImageUrl}
         />
       </div>
       <div className="background-info-container">
@@ -56,7 +59,7 @@ const SelectedMovie = () => {
             />
           </div>
           <div className="price">
-            <h1 className="selected-movie-title">Pris 47 kr</h1>
+            <h1 className="selected-movie-title">Pris {movie.price} kr</h1>
             <button onClick={addToCart}>Lägg till</button>
           </div>
         </div>
@@ -65,7 +68,7 @@ const SelectedMovie = () => {
         </div>
         <div className="feedback-div">
           <div className="movie-feedback">
-            {feedbackhidden ? <button style={{width:200}} onClick={() => {setFeedbackhidden(false)}}>Lämna en recension</button> : <FeedbackForm movieId ={movie.id} setFeedbackhidden={setFeedbackhidden}/> }
+            {feedbackhidden ? <button style={{width:200}} onClick={() => {setFeedbackhidden(false)}}>Lämna en recension</button> : <FeedbackForm movieId ={movie.id} feedbackhidden={feedbackhidden} setFeedbackhidden={setFeedbackhidden}/> }
           </div>
           <div className="feedback-info">
             <h1>Recensioner</h1>

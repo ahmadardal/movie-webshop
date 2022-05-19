@@ -5,8 +5,9 @@ import ShoppingCart from "./shoppingCart";
 import TotalPrice from "./totalPrice";
 
 const ShoppingCartContainer = (props, { addMovie, removeMovie }) => {
-  const { hiddenMenu, cartItems, totalPrice, itemCount, removeItem } = props;
-  const movies = useSelector((state) => state.cart);
+  const { hiddenMenu, cartItems, itemCount, removeItem } = props;
+  const movies = useSelector((state) => state.cart.items);
+  const totalPrice = useSelector((state) => state.cart.total);
   const dispatch = useDispatch();
 
   useEffect(() => {
