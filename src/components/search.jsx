@@ -28,7 +28,7 @@ const Search = ({setSearchTitle}) => {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                  />
-                <label>Type a movie name :</label>
+                <label>Movie name:</label>
             </div>
             <Link to={"/searchresults"}>
             <button onClick={setTitleAndResetInput}>Search</button>

@@ -5,24 +5,16 @@ const removeFromCart = createAction("Remove from cart");
 
 const actions = { addToCart, removeFromCart };
 
-// Example initial state
-// [
-//     {
-//         movie: movie,
-//         count: 1,
-//     },
-//     {
-//         movie: movie,
-//         count: 3,
-//     },
-// ]
-
-const initialState = [];
+const initialState = {
+  items: [],
+  count: 0,
+  total: 0,
+}
+;
 
 const cartReducer = createReducer(initialState, {
   [addToCart]: (state, action) => {
-
-    const movieIndex = state.findIndex(
+    const movieIndex = state.items.findIndex(
       (movie) => movie.movie.id === action.payload.id
     );
 
@@ -30,29 +22,35 @@ const cartReducer = createReducer(initialState, {
       //Movie does not exist in state!
       const newMovie = {
         movie: action.payload,
-        count: 1,
+        quantity: 1,
       };
-      state.push(newMovie);
+      state.items.push(newMovie);
     } else {
       //Movie exists in state already!
-      state[movieIndex].count += 1;
+      state.items[movieIndex].quantity += 1;
     }
 
-    console.log("Added", action.payload.title, "to cart.");
+    state.count += 1
+    state.total += action.payload.price
     return state;
   },
+
   [removeFromCart]: (state, action) => {
-    const movieIndex = state.findIndex(
+    const movieIndex = state.items.findIndex(
       (movie) => movie.movie.id === action.payload
     );
+    const moviePrice = state.items[movieIndex].movie.price;
 
     if (movieIndex !== -1) {
-      if (state[movieIndex].count > 1) {
-        state[movieIndex].count -= 1;
+      if (state.items[movieIndex].quantity > 1) {
+        state.items[movieIndex].quantity -= 1;
       } else {
-        state.splice(movieIndex, 1);
+        state.items.splice(movieIndex, 1);
       }
     }
+
+    state.count -= 1;
+    state.total -= moviePrice;
 
     return state;
   },
