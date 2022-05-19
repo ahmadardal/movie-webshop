@@ -18,6 +18,7 @@ const ShoppingCartContainer = (props, { addMovie, removeMovie }) => {
   const removeFromCart = (movieId) => { dispatch(actions.removeFromCart(movieId)); };
   return (
     <div className="shoppingCartContainer">
+      <button className="shoppingcart-close-button">X</button>
       {movies.map((movie) => {
         return <ShoppingCart movie={movie} removeItem={removeFromCart} />;
       })}
