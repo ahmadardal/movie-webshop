@@ -19,11 +19,16 @@ const SearchResults = ({title}) => {
     const [searchResults, setSearchResults] = useState(null);
     let content = null;
 
+    const generatePrice = () => {
+        return Math.floor(Math.random() * (99 - 11 + 1)) + 11;
+      };
+
     useEffect(() => {
 
         const fetchSearchData = async () => {
             console.log('Search Results fetching!')
             const tempList = await GetMovieData(title);
+            tempList.results.forEach((movie) => (movie.price = generatePrice()));
             setSearchResults(tempList);
             
         }
