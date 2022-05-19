@@ -29,7 +29,7 @@ const SearchResults = ({title}) => {
         }
 
         fetchSearchData()
-    }, []);
+    }, [title]);
 
     useEffect(() => {
         console.log('searchResults laddas');
