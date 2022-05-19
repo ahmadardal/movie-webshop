@@ -1,4 +1,5 @@
 import Movies from "./movies";
+import MovieSlider from "../components/movieslider";
 import "../styles/Home.css"
 
 

@@ -9,13 +9,18 @@ const MovieSlider = () => {
   const [slides, setSlides] = useState(null);
   let sliderList = null;
 
+  const generatePrice = () => {
+    return Math.floor(Math.random() * (99 - 11 + 1)) + 11;
+  };
+
   useEffect(() => {
   const fetchData = async () => {
     const moviesApi =
       "https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&api_key=357fd9dbde100c5f47082ae6a7f86d8b&sort_by=vote_average.desc";
     const respons = await fetch(moviesApi);
-    const data = await respons.json();
-    setSlides(data);
+    const movies = await respons.json();
+    movies.results.forEach((movie) => (movie.price = generatePrice()));
+    setSlides(movies);
   };
 
   fetchData()
