@@ -52,6 +52,7 @@
 .shoppingCart .cardRow .cardImg h3 {
     margin-top: 10px;
     margin-left: 10px;
+    max-width: 90px;
     transition: transform 900ms;
 }
 
