@@ -7,10 +7,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 10px;
   }
   
   .feedbackText {
-    /* background-color: red; */
+    padding: 10px;
     font-style: italic;
     align-self: center;
     flex: 3;
@@ -20,13 +21,39 @@
     justify-content: center;
     font-weight: 200;
     font-size: 17pt;
+    max-width: 450px;
+    
+  }
+
+  .feedbackText p {
+    margin: 0;
+  }
+
+  .starsAndAuthor {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .starsAndAuthor p {
+    align-self: flex-end;
+  }
+
+  .reactStars {
+    display: flex;
+    margin-left: 20px;
   }
   
   .feedbackAuthor {
-    /* background-color: blue; */
-    align-self: flex-end;
-    flex: 1;
-    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .feedbackAuthor p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding-right: 10px;
+    padding-bottom: 5px;
   }
 
   @media (max-width: 600px) {
@@ -34,3 +61,5 @@
       width: 300px;
     } 
   }
+
+  

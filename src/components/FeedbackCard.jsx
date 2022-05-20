@@ -33,13 +33,16 @@ function FeedbackCard({ movieId }) {
                             <div className="feedbackText">
                                 <p>" {item.comment} "</p>
                             </div>
-                            <div>{<ReactStars
-                                isHalf={true}
-                                edit={false}
-                                value={item.rate}
-                            />}</div>
+                            <div className='starsAndAuthor'>
+                                <div className='reactStars'>{<ReactStars
+                                    size={35}
+                                    isHalf={true}
+                                    edit={false}
+                                    value={item.rate}
+                                />}</div>
                             <div className="feedbackAuthor">
                                 <p>{`${item.name}, ${item.age}`}</p>
+                            </div>
                             </div>
                         </div>
                     )
