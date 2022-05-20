@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import "../../src/styles/Movies.css";
 import { Link } from "react-router-dom";
-import { fetchMovies } from "../api";
+import { discoverMovies, genreMovies } from "../api";
 
 const Movies = ({ category }) => {
   const [tempMovies, setTempMovies] = useState(null);
@@ -34,7 +34,12 @@ const Movies = ({ category }) => {
     }
 
     const getMovies = async () => {
-      const movies = await fetchMovies(category, genreCode);
+      let movies;
+      if (!category || genreCode === 0) {
+        movies = await discoverMovies();
+      } else {
+        movies = await genreMovies(genreCode);
+      }
       setTempMovies(movies);
     };
 
