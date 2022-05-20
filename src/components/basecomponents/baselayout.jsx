@@ -61,11 +61,11 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         }
         
 
-        <p>{itemCount > 0 && itemCount}</p>
+        <p>{itemCount > 0 && !hiddenMenu && itemCount}</p>
         <i
           onClick={() => setHiddenMenu(!hiddenMenu)}
           className={
-            hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"
+            hiddenMenu ? "hidden-component" : "fas fa-shopping-cart fa-lg"
           }
         ></i>
         <div id="ShoppingCartMenu">
