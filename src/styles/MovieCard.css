@@ -1,4 +1,17 @@
-.movieCardContainer {
+.normalMovieCardContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 280px;
+    width: 215px;
+    background-color: black;
+    position: relative;
+    border: 1px solid #000000;
+    box-sizing: content-box;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.smallMovieCardContainer {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 280px;

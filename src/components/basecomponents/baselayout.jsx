@@ -12,8 +12,8 @@ import Comedy from "../../pages/comedy";
 import Action from "../../pages/action";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import SelectedMovie from "../../pages/SelectedMovie";
+import CheckoutPage from "../../pages/CheckoutPage";
 import SearchResults from "../../pages/SearchResults";
-import { actions } from "../../state/reducers/counterReducer.js";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CloseShoppingCart from "../../assets/cross.png";
@@ -23,7 +23,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
   const totalPrice = useSelector((state) => state.cart.total);
   const itemCount = useSelector((state) => state.cart.count);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [searchTitle, setSearchTitle] = useState('');
+  const [searchTitle, setSearchTitle] = useState("");
 
   // This is for the shoppingcart function, all the way down to line 61
   const [hiddenMenu, setHiddenMenu] = useState(false);
@@ -48,18 +48,16 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         <div />
       )}
 
-      <div className="menuWrapper" >
+      <div className="menuWrapper">
         {hiddenMenu ? (
-          <img src={CloseShoppingCart} 
-          className="shoppingcart-close-cross"
-          onClick={() => setHiddenMenu(!hiddenMenu)}
+          <img
+            src={CloseShoppingCart}
+            className="shoppingcart-close-cross"
+            onClick={() => setHiddenMenu(!hiddenMenu)}
           />
         ) : (
           <div />
-        )
-
-        }
-        
+        )}
 
         <p>{itemCount > 0 && itemCount}</p>
         <i
@@ -90,7 +88,7 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
         {/* <div className="margin"> */}
         <div className="headContent">
           <Link to={"/"}>
-          <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
+            <img src={Logo} alt="Webpage Logo" className="webpage-logo-image" />
           </Link>
           <Search setSearchTitle={setSearchTitle} />
         </div>
@@ -104,7 +102,11 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
             <Route exact path="/horror" element={<Horror />} />
             <Route exact path="/comedy" element={<Comedy />} />
             <Route path="selectedmovie" element={<SelectedMovie />} />
-            <Route path="searchresults" element={<SearchResults title={searchTitle}/>} />
+            <Route exact path="/checkout" element={<CheckoutPage />} />
+            <Route
+              path="searchresults"
+              element={<SearchResults title={searchTitle} />}
+            />
           </Routes>
         </div>
 
@@ -144,6 +146,11 @@ const MenuList = () => {
         title="Comedy"
         image={require("../../assets/theatre.png")}
         navigatesTo="comedy"
+      />
+      <MenuItem
+        title="Test"
+        image={require("../../assets/theatre.png")}
+        navigatesTo="checkout"
       />
     </div>
   );

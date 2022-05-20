@@ -1,0 +1,27 @@
+.homeBaseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.cartList {
+    background-color: #e5e5e5;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height: max-content;
+}
+
+.cartItem {
+    background-color: white;
+    border: 1.5px solid #787878;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
