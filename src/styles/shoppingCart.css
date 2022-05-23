@@ -8,6 +8,15 @@
     background-color: #130506;
 }
 
+.shoppingcart-icons {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shoppingCart {
 
     width: 500px;
@@ -146,11 +155,6 @@
     .shoppingCartPrice {
         width: 100%;
        
-    }
-
-    #ShoppingCartMenu {
-        height: 100vh;
-        width: 100vw;
     }
 
 }
