@@ -30,7 +30,7 @@ const FeedbackForm = ({ movieId, setFeedbackhidden, feedbackhidden }) => {
   }, []);
 
   const saveComments = async () => {
-    if (textName === "", comment === "", rating === 0) {
+    if (textName === "", comment === "", rating === 0, age > 99, age < 2) {
       alert("Please fylla i alla fältet")
     } else {
       await addDoc(collectionRef, {
@@ -63,19 +63,20 @@ const FeedbackForm = ({ movieId, setFeedbackhidden, feedbackhidden }) => {
           type="text"
           required
           value={textName}
-          onChange={(e) => setTextName(e.currentTarget.value)}
+          onChange={(e) =>{setTextName(e.currentTarget.value)}}
         />
       </div>
       <div className="age">
         <label> Age : </label>
         <input
           type="number"
-          placeholder="Your age"
+          min={1}
+          max={90}
           value={age}
           onChange={(e) => {
             SetAge(e.target.value);
           }}
-          style={{ width: 30 }}
+          style={{ width: 50 }}
         />
       </div>
 
