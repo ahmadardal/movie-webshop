@@ -9,25 +9,44 @@ const CheckoutPage = (props) => {
 
   console.log(cart.items);
 
-  const cartItems = cart.items.map(item => {
+  const cartItems = cart.items.map((item) => {
     console.log(item.movie.title, item.movie.price, item.quantity);
-  })
+  });
 
-  const CartItem = ({item}) => {
+  const CartItem = ({ item }) => {
     return (
-    <div className="cartItem">
-      <MovieCard movie={item.movie}/>
-      <p>First item</p>
-      <p>Hello</p>
-    </div>);
+      <div className="cartItem">
+        <MovieCard movie={item.movie} isSmall={true} />
+
+        <div className="itemQuantity">
+          <a
+            href={`tel:`}
+            class="btn btn-success"
+            role="button"
+            data-bs-toggle="button"
+          >
+            +
+          </a>
+          <p className="itemPrice">{item.quantity * item.movie.price}kr</p>
+          <a
+            href={`tel:`}
+            class="btn btn-danger"
+            role="button"
+            data-bs-toggle="button"
+          >
+          -
+          </a>
+        </div>
+      </div>
+    );
   };
 
   return (
     <div className="homeBaseContainer">
       <div className="cartList">
-        {cart.items.map(item => {return (
-          <CartItem item={item}/>
-        )})}
+        {cart.items.map((item) => {
+          return <CartItem item={item} />;
+        })}
       </div>
     </div>
   );

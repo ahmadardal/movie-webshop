@@ -10,7 +10,7 @@
     width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-around;
     height: max-content;
 }
 
@@ -20,8 +20,35 @@
     margin-top: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    width: 60vw;
+    width: 40vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     height: fit-content;
+}
+
+.itemPrice {
+    font-size: 1.6rem;
+    font-weight: 500;
+    align-self: center;
+    background-color: blue;
+}
+
+.btn {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.itemQuantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: fit-content;
+    align-self: center;
 }

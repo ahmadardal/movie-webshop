@@ -14,8 +14,8 @@
 .smallMovieCardContainer {
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 280px;
-    width: 215px;
+    height: 182px;
+    width: 140px;
     background-color: black;
     position: relative;
     border: 1px solid #000000;
@@ -23,6 +23,8 @@
     border-radius: 10px;
     overflow: hidden;
 }
+
+
 
 .movieCardImage {
     position: inherit;
