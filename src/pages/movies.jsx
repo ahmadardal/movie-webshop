@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import "../../src/styles/Movies.css";
 import { Link } from "react-router-dom";
+import { discoverMovies, genreMovies } from "../api";
 
 const Movies = ({ category }) => {
   const [tempMovies, setTempMovies] = useState(null);
@@ -14,7 +15,6 @@ const Movies = ({ category }) => {
   // Removie this code when redux is installed
   useEffect(() => {
     let genreCode;
-    let URL;
     switch (category) {
       case "action":
         genreCode = 28;
@@ -33,23 +33,19 @@ const Movies = ({ category }) => {
         break;
     }
 
-    const fetchData = async () => {
+    const getMovies = async () => {
+      let movies;
       if (!category || genreCode === 0) {
-        URL =
-          "https://api.themoviedb.org/3/discover/movie?api_key=357fd9dbde100c5f47082ae6a7f86d8b&sort_by=popularity.desc";
+        movies = await discoverMovies();
       } else {
-        URL = `https://api.themoviedb.org/3/discover/movie?api_key=357fd9dbde100c5f47082ae6a7f86d8b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreCode}&with_watch_monetization_types=flatrate`;
+        movies = await genreMovies(genreCode);
       }
-
-      const respons = await fetch(URL);
-      const movies = await respons.json();
-      movies.results.forEach((movie) => (movie.price = generatePrice()));
-      // console.log(movies);
-
       setTempMovies(movies);
     };
 
-    fetchData();
+    if (!tempMovies) {
+      getMovies();
+    }
   }, []);
 
   if (tempMovies != null) {

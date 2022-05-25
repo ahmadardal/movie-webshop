@@ -59,15 +59,19 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
           />
         ) : (
           <div />
-        )}
+        )
 
-        <p>{itemCount > 0 && itemCount}</p>
-        <i
-          onClick={() => setHiddenMenu(!hiddenMenu)}
-          className={
-            hiddenMenu ? "fas fa-times fa-lg" : "fas fa-shopping-cart fa-lg"
-          }
-        ></i>
+        }
+        
+        <div className="shoppingcart-icons">
+          <p>{itemCount > 0 && !hiddenMenu && itemCount}</p>
+          <i
+            onClick={() => setHiddenMenu(!hiddenMenu)}
+            className={
+              hiddenMenu ? "hidden-component" : "fas fa-shopping-cart fa-lg"
+            }
+          ></i>
+        </div>
         <div id="ShoppingCartMenu">
           {hiddenMenu ? (
             <ShoppingCartContainer

@@ -8,6 +8,15 @@
     background-color: #130506;
 }
 
+.shoppingcart-icons {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shoppingCart {
 
     width: 500px;
@@ -17,10 +26,7 @@
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    background: linear-gradient(135deg,
-            #729C5E 50%,
-            #424242 50%,
-            #A39595 50%);
+    background-color: rgb(219, 219, 219);
     box-shadow: 1px 2px 30px 1px #130506;
 }
 
@@ -52,6 +58,7 @@
 .shoppingCart .cardRow .cardImg h3 {
     margin-top: 10px;
     margin-left: 10px;
+    max-width: 90px;
     transition: transform 900ms;
 }
 
@@ -129,4 +136,26 @@
     font-size: 18px;
     font-weight: bold;
     color: #fff;
+}
+
+@media(max-width: 600px) {
+
+    .shoppingCart {
+
+        width: 100%;
+        height: 100%;
+        padding: 24px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+        background-color: rgb(219, 219, 219);
+        box-shadow: 1px 2px 30px 1px #130506;
+    }
+
+    .shoppingCartPrice {
+        width: 100%;
+       
+    }
+
 }
