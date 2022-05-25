@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import BaseLayout from "./components/basecomponents/baselayout";
 import { useEffect, useState } from "react";
 import GetMovieData from "./components/GetMovieData";
