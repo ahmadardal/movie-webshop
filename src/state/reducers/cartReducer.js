@@ -2,16 +2,15 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const addToCart = createAction("Add to cart");
 const removeFromCart = createAction("Remove from cart");
+const clearCart = createAction("Clear the cart");
 
-const actions = { addToCart, removeFromCart };
+const actions = { addToCart, removeFromCart, clearCart };
 
 const initialState = {
   items: [],
   count: 0,
   total: 0,
-}
-;
-
+};
 const cartReducer = createReducer(initialState, {
   [addToCart]: (state, action) => {
     const movieIndex = state.items.findIndex(
@@ -30,8 +29,8 @@ const cartReducer = createReducer(initialState, {
       state.items[movieIndex].quantity += 1;
     }
 
-    state.count += 1
-    state.total += action.payload.price
+    state.count += 1;
+    state.total += action.payload.price;
     return state;
   },
 
@@ -53,6 +52,17 @@ const cartReducer = createReducer(initialState, {
     state.total -= moviePrice;
 
     return state;
+  },
+
+  [clearCart]: (state, action) => {
+
+    const newState = {
+      items: [],
+      count: 0,
+      total: 0,
+    }
+
+    return newState;
   },
 });
 
