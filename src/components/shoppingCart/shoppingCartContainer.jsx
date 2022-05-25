@@ -23,7 +23,7 @@ const ShoppingCartContainer = (props, { addMovie, removeMovie }) => {
       <Link to={"/checkout"} style={{textDecoration: 'none'}}>
         <TotalPrice totalPrice={totalPrice} itemCount={itemCount} />
       </Link>
-      })}
+      
 
     </div>
   );
