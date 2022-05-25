@@ -17,6 +17,8 @@ import SearchResults from "../../pages/SearchResults";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CloseShoppingCart from "../../assets/cross.png";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 // This is the base layout for the entire page:
 const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
@@ -110,7 +112,21 @@ const BaseLayout = ({ headerContent, mainContent, footerContent }) => {
           </Routes>
         </div>
 
-        <div className="footerContent"></div>
+        <div className="footerContent">
+          {" "}
+          <ToastContainer
+            position="bottom-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
+
         {/* </div> */}
       </div>
     </div>
@@ -146,11 +162,6 @@ const MenuList = () => {
         title="Comedy"
         image={require("../../assets/theatre.png")}
         navigatesTo="comedy"
-      />
-      <MenuItem
-        title="Test"
-        image={require("../../assets/theatre.png")}
-        navigatesTo="checkout"
       />
     </div>
   );

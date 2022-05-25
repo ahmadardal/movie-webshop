@@ -6,7 +6,7 @@ const TotalPrice = ({totalPrice, itemCount}) =>{
     return (
         <div className="shoppingCartPrice">
 
-            <h2>Total Price : {totalPrice} kr</h2>
+            <h3>Go to checkout</h3>
 
             <div className="allCartItems"
                 style={{ background: `url("${CardImg}") no-repeat center/cover` }}>
